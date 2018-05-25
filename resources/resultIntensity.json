@@ -1,0 +1,15 @@
+{
+	"data": [{
+		"word": "el",
+		"attention": 0.0
+	}, {
+		"word": "perro",
+		"attention": 0.4
+	}, {
+		"word": "come",
+		"attention": 0.8
+	}, {
+		"word": ".",
+		"attention": 0.0
+	}]
+}

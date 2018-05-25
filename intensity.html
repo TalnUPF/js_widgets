@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+  
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./js/taln.widgets.js"></script>
+
+  <title>UPF TENSOR components</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <h1 align="center">TENSOR: UPF text analysis</h1>
+  </div>
+
+
+  <div class="container">
+    <div class="card">
+      <div class="card-header">Input text here:</div>
+      <div class="card-body">
+
+        <form id="inputForm">
+          <div class="form-group has-error has-feedback">
+             <div id="intensity" class="form-control" style="height: 300px;" contenteditable="true"></div><span class="glyphicon glyphicon-remove form-control-feedback"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg" id="btnLoad" data-loading-text="<i class='fa fa-spinner fa-spin'></i> Processing">Analyze</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+  
+<script type="text/javascript">
+
+function spinButton() {
+  var button = $("#btnLoad");
+  button.data('original-text', button.html());
+  button.html(button.data('loading-text'));
+  setTimeout(function() {
+    button.html(button.data('original-text'));
+  }, 80000);
+}
+
+function unspinButton() {
+  var button = $("#btnLoad");
+  button.html(button.data('original-text'));
+}
+
+$("#inputForm").submit(function(event) {
+  event.preventDefault();
+  
+  var inputText = $("#intensity").text();
+  taln.widgets.submitForm("POST", "./resources/resultIntensity.json", inputText, taln.widgets.loadIntensity, "intensity", spinButton, unspinButton);
+});
+</script>
+
+</html>

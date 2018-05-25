@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cat.net/ajax/libs/sigma.js/1.2.1/sigma.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cat.net/ajax/libs/sigma.js/1.2.1/plugins/sigma.layout.forceAtlas2.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cat.net/ajax/libs/sigma.js/1.2.1/plugins/sigma.parsers.gexf.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cat.net/ajax/libs/sigma.js/1.2.1/plugins/sigma.renderers.edgeLabels.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cat.net/ajax/libs/sigma.js/1.2.1/plugins/sigma.plugins.filter.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./js/taln.widgets.js"></script>
+
+  <title>UPF TENSOR components</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <h1 align="center">TENSOR: UPF text analysis</h1>
+  </div>
+
+
+  <div class="container">
+    <div class="card">
+      <div class="card-header">Input text here:</div>
+      <div class="card-body">
+
+        <form id="inputForm">
+          <div class="form-group">
+            <!--label for="inputText">Input text here...</label -->
+            <textarea class="form-control" id="inputText" rows="7"></textarea>
+          </div>
+          <!--button type="submit" class="btn btn-success">Submit</button -->
+          <button type="submit" class="btn btn-primary btn-lg" id="btnLoad" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Processing">Analyze</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="result" class="container">
+	<div id="graph" style="height: 500px;"></div>
+  </div>
+  
+
+<script type="text/javascript">
+
+function spinButton() {
+  var button = $("#btnLoad");
+  button.data('original-text', button.html());
+  button.html(button.data('loading-text'));
+  setTimeout(function() {
+    button.html(button.data('original-text'));
+  }, 80000);
+}
+
+function unspinButton() {
+  var button = $("#btnLoad");
+  button.html(button.data('original-text'));
+}
+
+$("#inputForm").submit(function(event) {
+  event.preventDefault();
+  
+  var inputText = $("#inputText").val();
+  taln.widgets.submitForm("POST", "./resources/resultGraph.json", inputText, taln.widgets.loadGraph, "graph", spinButton, unspinButton);
+});
+</script>

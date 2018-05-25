@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="http://weaver.nlplab.org/~brat/demo/v1.3/style-vis.css"/>
+  
+  <script type="text/javascript" src="http://weaver.nlplab.org/~brat/demo/v1.3/client/lib/head.load.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./js/taln.widgets.js"></script>
+
+  <title>UPF TENSOR components</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <h1 align="center">TENSOR: UPF text analysis</h1>
+  </div>
+
+
+  <div class="container">
+    <div class="card">
+      <div class="card-header">Input text here:</div>
+      <div class="card-body">
+
+        <form id="inputForm">
+          <div class="form-group">
+            <!--label for="inputText">Input text here...</label -->
+            <textarea class="form-control" id="inputText" rows="7"></textarea>
+          </div>
+          <!--button type="submit" class="btn btn-success">Submit</button -->
+          <button type="submit" class="btn btn-primary btn-lg" id="btnLoad" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Processing">Analyze</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="result" class="container">
+    <div id="brat"></div>
+  </div>
+  
+
+<script type="text/javascript">
+/**
+ * Base output JavaScript functions
+ */
+var bratLocation = 'http://weaver.nlplab.org/~brat/demo/v1.3';
+head.js(
+	//JQuery and Boostrap already loaded in head section
+
+	// External libraries
+	'./external/jquery.svg.min.js',
+    './external/jquery.svgdom.min.js',
+	
+	//Old External
+	/*bratLocation + '/client/lib/jquery.min.js',
+	bratLocation + '/client/lib/jquery.svg.min.js',
+	bratLocation + '/client/lib/jquery.svgdom.min.js',*/
+	
+	// brat helper modules
+	bratLocation + '/client/src/configuration.js',
+	bratLocation + '/client/src/util.js',
+	bratLocation + '/client/src/annotation_log.js',
+	bratLocation + '/client/lib/webfont.js',
+	
+	// brat modules
+	bratLocation + '/client/src/dispatcher.js',
+	bratLocation + '/client/src/url_monitor.js',
+	
+	/*'../resources/core/js/configuration.js',
+	'../resources/core/js/util.js',
+	'../resources/core/js/annotation_log.js',
+	'../resources/core/js/webfont.js',	
+	'../resources/core/js/dispatcher.js',
+	'../resources/core/js/url_monitor.js',		*/
+	'./external/visualizer.js'
+);
+
+function spinButton() {
+  var button = $("#btnLoad");
+  button.data('original-text', button.html());
+  button.html(button.data('loading-text'));
+  setTimeout(function() {
+    button.html(button.data('original-text'));
+  }, 80000);
+}
+
+function unspinButton() {
+  var button = $("#btnLoad");
+  button.html(button.data('original-text'));
+}
+
+head.ready(function() {
+	$("#inputForm").submit(function(event) {
+      event.preventDefault();
+      
+      var inputText = $("#inputText").val();
+      taln.widgets.submitForm("POST", "./resources/resultBrat.json", inputText, taln.widgets.loadBrat, "brat", spinButton, unspinButton);
+    });
+});
+</script>
