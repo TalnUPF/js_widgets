@@ -64,8 +64,8 @@ function nodeClickHandler(event) {
     }
 }
 
-var taln = {};
-taln.widgets = {};
+var taln = taln || {};
+taln.widgets = taln.widgets || {};
 taln.widgets.graph = {
 	
 	loadGraph: function(result, output){

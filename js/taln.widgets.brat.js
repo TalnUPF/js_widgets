@@ -1,5 +1,5 @@
-var taln = {};
-taln.widgets = {};
+var taln = taln || {};
+taln.widgets = taln.widgets || {};
 taln.widgets.brat = {
 
     submitForm: function(type, url, input, successCallback, output, loadingCallback, endLoadingCallback) {

@@ -33,8 +33,8 @@ function paintChart(data, output, options)
 	
 };
 
-var taln = {};
-taln.widgets = {};
+var taln = taln || {};
+taln.widgets = taln.widgets || {};
 taln.widgets.chart = {
 	
 	loadRadar: function(result, output){
