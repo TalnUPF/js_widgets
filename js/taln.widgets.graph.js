@@ -65,7 +65,7 @@ function nodeClickHandler(event) {
 }
 
 var taln = {};
-var taln.widgets = {};
+taln.widgets = {};
 taln.widgets.graph = {
 	
 	loadGraph: function(result, output){
