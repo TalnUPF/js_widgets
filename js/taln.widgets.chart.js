@@ -34,6 +34,7 @@ function paintChart(data, output, options)
 };
 
 var taln = {};
+var taln.widgets = {};
 taln.widgets.chart = {
 	
 	loadRadar: function(result, output){

@@ -1,4 +1,5 @@
 var taln = {};
+var taln.widgets = {};
 taln.widgets.intensity = {
 	
 	loadIntensity: function(result, output){
