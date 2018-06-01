@@ -1,15 +1,50 @@
-{
-	"data": [{
-		"word": "el",
-		"attention": 0.0
-	}, {
-		"word": "perro",
-		"attention": 0.4
-	}, {
-		"word": "come",
-		"attention": 0.8
-	}, {
-		"word": ".",
-		"attention": 0.0
-	}]
+{"intensity": 
+	{
+		"data": [{
+			"word": "el",
+			"attention": 0.0
+		}, {
+			"word": "perro",
+			"attention": 0.4
+		}, {
+			"word": "come",
+			"attention": 0.8
+		}, {
+			"word": ".",
+			"attention": 0.0
+		}]
+	},
+  "result":
+ 	{
+ 		"data": {
+ 			"text": "The guy took the train to Busan in order to avoid the zombies.",
+ 			"spans": [
+ 				{
+ 				 "start": 4,
+ 				 "end": 7,
+ 				 "relevance": 1
+ 				},
+ 				{
+ 				 "start": 8,
+ 				 "end": 12,
+ 				 "relevance": 0.5
+ 				},
+ 				{
+ 				 "start": 17,
+ 				 "end": 31,
+ 				 "relevance": 0.3
+ 				},
+ 				{
+ 				 "start": 41,
+ 				 "end": 49,
+ 				 "relevance": 0.9
+ 				},
+ 				{
+ 				 "start": 50,
+ 				 "end": 61,
+ 				 "relevance": 1
+ 				}
+ 			]
+ 		}
+ 	}
 }

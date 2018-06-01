@@ -2,28 +2,43 @@
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
+    <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="http://weaver.nlplab.org/~brat/demo/v1.3/style-vis.css"/>
-  <link rel="stylesheet" href="./external/radar.css">
-  <link rel="stylesheet" href="./css/fix.css">
   
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqcloud/1.0.4/jqcloud.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqcloud/1.0.4/jqcloud-1.0.4.js"></script>
+  
+  <!--BRAT-->
+  <link rel="stylesheet" type="text/css" href="http://weaver.nlplab.org/~brat/demo/v1.3/style-vis.css"/>
+  <link rel="stylesheet" href="./css/fix.css">
   <script type="text/javascript" src="http://weaver.nlplab.org/~brat/demo/v1.3/client/lib/head.load.min.js"></script>
+  
+  <!--GRAPH-->
   <script type="text/javascript" src="https://cdnjs.cat.net/ajax/libs/sigma.js/1.2.1/sigma.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cat.net/ajax/libs/sigma.js/1.2.1/plugins/sigma.layout.forceAtlas2.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cat.net/ajax/libs/sigma.js/1.2.1/plugins/sigma.parsers.gexf.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cat.net/ajax/libs/sigma.js/1.2.1/plugins/sigma.renderers.edgeLabels.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cat.net/ajax/libs/sigma.js/1.2.1/plugins/sigma.plugins.filter.min.js"></script>
+  
+  <!--CHART-->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+  <link rel="stylesheet" href="./external/radar.css">
   <script type="text/javascript" src="./external/radarChart.js"></script>
-  <script type="text/javascript" src="./js/taln.widgets.js"></script>
+  
+  <!--TALN WIDGETS-->
+  <script type="text/javascript" src="./js/taln.widgets.brat.js"></script>
+  <script type="text/javascript" src="./js/taln.widgets.intensity.js"></script>
+  <script type="text/javascript" src="./js/taln.widgets.graph.js"></script>
+  <script type="text/javascript" src="./js/taln.widgets.chart.js"></script>
 
   <title>TALN Widgets</title>
 </head>
@@ -62,8 +77,9 @@
 	
 			<div class="tab-pane fade" id="brat" role="tabpanel" aria-labelledby="brat-tab">
 				<button class="btn btn-primary btn-lg" id="submitBrat" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Processing">Analyze</button>
-			
-				<div id="bratComponent"></div>
+				<div id="bratContainer">
+					<div id="bratComponent"></div>
+				</div>
 			</div>
 		
 			<div class="tab-pane fade" id="graph" role="tabpanel" aria-labelledby="graph-tab">
@@ -75,7 +91,7 @@
 			<div class="tab-pane fade" id="chart" role="tabpanel" aria-labelledby="chart-tab">
 				<button class="btn btn-primary btn-lg" id="submitChart" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Processing">Analyze</button>
 			
-				<div id="chartComponent" style="height: 500px;"></div>
+				<div id="chartComponent" style="height: 500px;" class="accordion"></div>
 			</div>
 		
 		</div>
@@ -122,44 +138,247 @@ function unspinButton() {
   button.html(button.data('original-text'));
 }
 
-var margin = {top: 100, right: 100, bottom: 100, left: 100};
+var margin = {top: 80, right: 20, bottom: 80, left: 20};
 
 var color = d3.scale.ordinal()
-				.range(["#FF0000","#00FF00","#0000FF","#FFFF00","#00FFFF", "#FFFFFF"]);
+				.range(["#3366cc", "#dc3912", "#FFFF00", "#109618", "#990099", "#0099c6", "#dd4477", "#66aa00", "#8B4513", "#316395"]);
 
 var radarChartOptions = {
-  w: 500,
-  h: 500,
+  w: 480,
+  h: 250,
   margin: margin,
   maxValue: 0,
   levels: 5,
   roundStrokes: false,
   roundGrid: false,
   color: color,
-  opacityArea: 0.25
+  opacityArea: 0.18,
+  labelFactor: 1.20,
+  wrapWidth: 200,
+  chartHorizontalLocation: 0.4,
+  chartVerticalLocation: 0.5,
+  legendHorizontalLocation: 0.75,
+  legendVerticalLocation: 0,
+  titleHorizontalLocation: 0,
+  titleVerticalLocation: -0.15,
+  labelSize: 9,
+  legendSize: 10,
+  titleSize: 12
 };
+
+var bratData = null;
+
+function receiveUrlResult (url, data, output) {
+	$.ajax({
+		type: "POST",
+		dataType: "json",
+		url: url
+	})
+	.done(function(result) {
+		taln.widgets.chart.loadRadar(result, data, output);
+	})
+	.fail(function(jqXHR, textStatus, errorThrown) {
+		var msg = '';
+		if (jqXHR.status === 0) {
+		    msg = 'Not connect.\n Verify Network.';
+		} else if (jqXHR.status == 404) {
+		    msg = 'Requested page not found. [404]';
+		} else if (jqXHR.status == 500) {
+		    msg = 'Internal Server Error [500].';
+		} else if (textStatus === 'parsererror') {
+		    msg = 'Requested JSON parse failed.';
+		} else if (textStatus === 'timeout') {
+		    msg = 'Time out error.';
+		} else if (textStatus === 'abort') {
+		    msg = 'Ajax request aborted.';
+		} else {
+		    msg = 'Uncaught Error.\n' + jqXHR.responseText;
+		}
+		alert(msg);
+	})
+	.always(function(data) {
+	});
+};
+
+function submitIntensity(type, url, input, loadingCallback, endLoadingCallback) {
+	typeof loadingCallback === 'function' && loadingCallback();
+	var jqxhr = $.ajax({
+			type: type,
+			dataType: "json",
+			url: url,
+			data: {
+				text: input
+			} 
+		})
+		.done(function(result) {
+			$("#intensityComponent").empty();
+			taln.widgets.intensity.loadIntensity2(result["result"], "intensityComponent");
+		})
+		.fail(function(jqXHR, textStatus, errorThrown) {
+			var msg = '';
+			if (jqXHR.status === 0) {
+			    msg = 'Not connect.\n Verify Network.';
+			} else if (jqXHR.status == 404) {
+			    msg = 'Requested page not found. [404]';
+			} else if (jqXHR.status == 500) {
+			    msg = 'Internal Server Error [500].';
+			} else if (textStatus === 'parsererror') {
+			    msg = 'Requested JSON parse failed.';
+			} else if (textStatus === 'timeout') {
+			    msg = 'Time out error.';
+			} else if (textStatus === 'abort') {
+			    msg = 'Ajax request aborted.';
+			} else {
+			    msg = 'Uncaught Error.\n' + jqXHR.responseText;
+			}
+			alert(msg);
+		})
+		.always(function(data) {
+			typeof endLoadingCallback === 'function' && endLoadingCallback();
+		});
+}
+
+function submitBrat(type, url, input, loadingCallback, endLoadingCallback) {
+	typeof loadingCallback === 'function' && loadingCallback();
+	var jqxhr = $.ajax({
+			type: type,
+			dataType: "json",
+			url: url,
+			data: {
+				text: input
+			} 
+		})
+		.done(function(result) {
+			$("#bratContainer").empty();
+			$("#bratContainer").append("<div id=\"bratComponent\"></div>");
+			if ($('#brat').hasClass("show")) {
+				taln.widgets.brat.loadBrat(result["brat"], "bratComponent");
+			} else {
+				bratData = result["brat"];
+			}
+		})
+		.fail(function(jqXHR, textStatus, errorThrown) {
+			var msg = '';
+			if (jqXHR.status === 0) {
+			    msg = 'Not connect.\n Verify Network.';
+			} else if (jqXHR.status == 404) {
+			    msg = 'Requested page not found. [404]';
+			} else if (jqXHR.status == 500) {
+			    msg = 'Internal Server Error [500].';
+			} else if (textStatus === 'parsererror') {
+			    msg = 'Requested JSON parse failed.';
+			} else if (textStatus === 'timeout') {
+			    msg = 'Time out error.';
+			} else if (textStatus === 'abort') {
+			    msg = 'Ajax request aborted.';
+			} else {
+			    msg = 'Uncaught Error.\n' + jqXHR.responseText;
+			}
+			alert(msg);
+		})
+		.always(function(data) {
+			typeof endLoadingCallback === 'function' && endLoadingCallback();
+		});
+}
+
+function submitGraph(type, url, input, loadingCallback, endLoadingCallback) {
+	typeof loadingCallback === 'function' && loadingCallback();
+	var jqxhr = $.ajax({
+			type: type,
+			dataType: "json",
+			url: url,
+			data: {
+				text: input
+			} 
+		})
+		.done(function(result) {
+			$("#graphComponent").empty();
+		
+			taln.widgets.graph.loadGraph(result["data"]["graph"], "graphComponent");
+		})
+		.fail(function(jqXHR, textStatus, errorThrown) {
+			var msg = '';
+			if (jqXHR.status === 0) {
+			    msg = 'Not connect.\n Verify Network.';
+			} else if (jqXHR.status == 404) {
+			    msg = 'Requested page not found. [404]';
+			} else if (jqXHR.status == 500) {
+			    msg = 'Internal Server Error [500].';
+			} else if (textStatus === 'parsererror') {
+			    msg = 'Requested JSON parse failed.';
+			} else if (textStatus === 'timeout') {
+			    msg = 'Time out error.';
+			} else if (textStatus === 'abort') {
+			    msg = 'Ajax request aborted.';
+			} else {
+			    msg = 'Uncaught Error.\n' + jqXHR.responseText;
+			}
+			alert(msg);
+		})
+		.always(function(data) {
+			typeof endLoadingCallback === 'function' && endLoadingCallback();
+		});
+}
+
+function submitChart(type, url, input, loadingCallback, endLoadingCallback) {
+	typeof loadingCallback === 'function' && loadingCallback();
+	var jqxhr = $.ajax({
+			type: type,
+			dataType: "json",
+			url: url,
+			data: {
+				text: input
+			} 
+		})
+		.done(function(result) {
+			$("#chartComponent").empty();
+			receiveUrlResult("./resources/baseRadar.json", result["data"]["profiling"], "chartComponent");
+		})
+		.fail(function(jqXHR, textStatus, errorThrown) {
+			var msg = '';
+			if (jqXHR.status === 0) {
+			    msg = 'Not connect.\n Verify Network.';
+			} else if (jqXHR.status == 404) {
+			    msg = 'Requested page not found. [404]';
+			} else if (jqXHR.status == 500) {
+			    msg = 'Internal Server Error [500].';
+			} else if (textStatus === 'parsererror') {
+			    msg = 'Requested JSON parse failed.';
+			} else if (textStatus === 'timeout') {
+			    msg = 'Time out error.';
+			} else if (textStatus === 'abort') {
+			    msg = 'Ajax request aborted.';
+			} else {
+			    msg = 'Uncaught Error.\n' + jqXHR.responseText;
+			}
+			alert(msg);
+		})
+		.always(function(data) {
+			typeof endLoadingCallback === 'function' && endLoadingCallback();
+		});
+}
 
 head.ready(function() {
 	$("#highlightForm").submit(function(event) {
       event.preventDefault();
       
       var inputText = $("#intensity").text();
-      taln.widgets.submitForm("POST", "./resources/resultIntensity.json", inputText, taln.widgets.loadIntensity, "intensityComponent", spinButton, unspinButton);
+      submitIntensity("POST", "./resources/resultIntensity.json", inputText, spinButton, unspinButton);
     });
     
     $("#submitBrat").click(function() {
 
-      taln.widgets.submitForm("POST", "./resources/resultBrat.json", "", taln.widgets.loadBrat, "bratComponent", spinButton, unspinButton);
+      submitBrat("POST", "./resources/resultBrat.json", "", spinButton, unspinButton);
     });
     
     $("#submitGraph").click(function() {
       
-      taln.widgets.submitForm("POST", "./resources/resultGraph.json", "", taln.widgets.loadGraph, "graphComponent", spinButton, unspinButton);
+      submitGraph("POST", "./resources/resultGraph.json", "", spinButton, unspinButton);
     });
     
     $("#submitChart").click(function() {
       
-      taln.widgets.submitForm("POST", "./resources/baseRadar.json", "", taln.widgets.loadRadar, "chartComponent", spinButton, unspinButton);
+      submitChart("POST", "./resources/resultChart.json", "", spinButton, unspinButton);
     });
 });
 </script>

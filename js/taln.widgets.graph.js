@@ -69,12 +69,12 @@ taln.widgets = taln.widgets || {};
 taln.widgets.graph = {
 	
 	loadGraph: function(result, output){
-		if (result['data'] === "") {
+		if (result === "") {
 			$("#"+output).html("Error: UnsupportedEncodingException");
 		} else {
 		
 			var parser = new DOMParser()
-			var graphDom = parser.parseFromString(result['data'], "application/xml");
+			var graphDom = parser.parseFromString(result, "application/xml");
 	
 			sigma.parsers.gexf(graphDom,
 				{

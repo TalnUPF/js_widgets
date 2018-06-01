@@ -1,18 +1,28 @@
-function paintChart(data, output, options)
+function paintChart(base, result, output, options)
 {	
+	var chartNum = 1;
 	var graphsData = [];
 	//For each model
-	$.each(data, function(i, value)
+	$.each(base, function(modelNum, value)
 	{
 		//console.log(value["modelName"]);
 		//console.log(value["labels"]);
 		
 		graphsData[value["modelName"]] = [];
 		
+		$("#" + output).append(	"<div class='card'>" +
+		 							"<div class='card-header' id='heading" + modelNum + "'>" + 
+		 								"<button class='btn btn-link collapsed' type='button' data-toggle='collapse' data-target='#collapse" + modelNum + "' aria-expanded='false' aria-controls='collapse" + modelNum + "'>" + value["modelName"] + "</button>" +
+		 							"</div>" +
+		 							"<div id='collapse" + modelNum + "' class='collapse' aria-labelledby='heading" + modelNum + "' data-parent='#" + output + "'>" + 
+										"<div id='" + output + "Model" + modelNum + "'></div>" +
+									"</div>" +
+								"</div>");
+		
 		//For each graph
 		$.each(value["graphs"], function(k, graph)
 		{
-			graphsData[value["modelName"]][graph["name"]] = [];
+			graphsData[value["modelName"]][graph["name"]] = {name:graph["name"], classes:[]};
 				
 			//For each class
 			$.each(value["labels"], function(j, label)
@@ -23,13 +33,42 @@ function paintChart(data, output, options)
 				{
 					graphData.features.push({axis:feature,value:value[label][feature]});
 				});
-				graphsData[value["modelName"]][graph["name"]].push(graphData);
+				graphsData[value["modelName"]][graph["name"]].classes.push(graphData);
 			
 			});
+			
+			var resultData = result["features"];
+			var predictionsData = result["Predictions"];
+			var modelPrecition;
+			for (var i = 0; i < predictionsData.length; i++) {
+				var prediction = predictionsData[i];
+				if(prediction.modelName == value["modelName"]) {
+					modelPrecition = prediction.prediction;
+					break;
+				}
+			}
+			
+			var graphData = {name:"Prediction: " + modelPrecition, features:[]};
+			//For each axis
+			$.each(graph["axes"], function(l, feature)
+			{
+				if (resultData[feature] != null) {
+					graphData.features.push({axis:feature,value:resultData[feature].value});
+				} else {
+					graphData.features.push({axis:feature,value:0});
+				}
+			});
+			graphsData[value["modelName"]][graph["name"]].classes.push(graphData);
+			
+			$("#" + output + "Model" + modelNum).append("<div id='" + output + chartNum + "' style='display: inline-block;'></div>");
+			RadarChart(output + chartNum, graphsData[value["modelName"]][graph["name"]], options);
+			
+			chartNum++;
 		});
 		
+		chartNum++;
 	});
-	RadarChart("#" + output, graphsData["revistasTrainBalanced.arff"]["Dependency Features"], options);
+	
 	
 };
 
@@ -37,9 +76,9 @@ var taln = taln || {};
 taln.widgets = taln.widgets || {};
 taln.widgets.chart = {
 	
-	loadRadar: function(result, output){
+	loadRadar: function(base, result, output, options){
 	
-		paintChart(result, output, radarChartOptions);
+		paintChart(base, result, output, radarChartOptions);
 	}
 	
 };

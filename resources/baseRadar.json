@@ -1,5 +1,5 @@
 [{
-	"modelName": "revistasTrainBalanced.arff",
+	"modelName": "revistasTrainBalanced.model",
 	"inspire": {
 		"PRP$": 0.4943367013952069,
 		"EXT": 0.0007220216606498196,
@@ -776,7 +776,7 @@
 		"axes": ["MNR", "LOC", "LGS", "MD", "NNP", "RB"],
 		"name": "Dependency and PoS Features 2"
 	}],
-	"modelName": "gender_small.arff",
+	"modelName": "gender_small.model",
 	"male": {
 		"PRP$": 0.47502221001495337,
 		"EXT": 0.003983112899157598,
@@ -1082,7 +1082,7 @@
 		"STD_CHAR_LENGTH": 128.68413422429563
 	}
 }, {
-	"modelName": "ideologos.arff",
+	"modelName": "ideologos.model",
 	"alNusra.txt": {
 		"PRP$": 0.3134823848238482,
 		"EXT": 0.0,
@@ -2895,7 +2895,7 @@
 		"UTF_8_APOSTROPHE_RATIO": 0.0,
 		"STD_CHAR_LENGTH": 23.088607662746117
 	},
-	"modelName": "kaggle3.arff",
+	"modelName": "kaggle3.model",
 	"Christian": {
 		"PRP$": 0.5,
 		"EXT": 0.0,

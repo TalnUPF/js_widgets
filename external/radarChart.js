@@ -19,17 +19,26 @@ function RadarChart(id, data, options) {
 	 h: 600,				//Height of the grid
 	 margin: {top: 20, right: 20, bottom: 20, left: 20}, //The margins of the SVG
 	 levels: 3,				//How many levels or inner grids should there be drawn
-	 maxValue: 1, 			//What is the value that the biggest level will represent
-	 labelFactor: 1.25, 		//How much farther than the outer grid level should the labels be placed
-	 wrapWidth: 60, 		//The number of pixels after which a label needs to be given a new line
-	 opacityArea: 0.35, 	//The opacity of the area of the blob
-	 dotRadius: 4, 			//The size of the colored circles of each blog
-	 opacityLevel: 0.1, 	//The opacity of each level of the grid
-	 strokeWidth: 2, 		//The width of the stroke around each blob
+	 maxValue: 1,			//What is the value that the biggest level will represent
+	 labelFactor: 1.25,		//How much farther than the outer grid level should the labels be placed
+	 wrapWidth: 60,			//The number of pixels after which a label needs to be given a new line
+	 opacityArea: 0.35,		//The opacity of the area of the blob
+	 dotRadius: 4,			//The size of the colored circles of each blog
+	 opacityLevel: 0.1,		//The opacity of each level of the grid
+	 strokeWidth: 2,		//The width of the stroke around each blob
 	 roundStrokes: false,	//If true the area and stroke will follow a round path (cardinal-closed)
 	 roundGrid: false,		//If true the grid will be circular
-	 color: d3.scale.category10(),	//Color function
-	 
+	 chartHorizontalLocation: 0.5,		//Horizontal location of the grit with respect to the width of the grid
+	 chartVerticalLocation: 0.5,		//Vertical location of the grit with respect to the height of the grid
+	 legendHorizontalLocation: 0.75,	//Horizontal location of the legend with respect to the width of the grid
+	 legendVerticalLocation: -0.1,		//Vertical location of the legend with respect to the height of the grid
+	 titleHorizontalLocation: -0.1,		//Horizontal location of the title with respect to the width of the grid
+	 titleVerticalLocation: -0.1,		//Vertical location of the title with respect to the height of the grid
+	 color: d3.scale.category10(),		//Color function
+	 inputColor: "#FF8C00",
+	 labelSize: 11,
+	 legendSize: 12,
+	 titleSize: 14
 	};
 	
 	//Put all of the options into a variable called cfg
@@ -40,9 +49,9 @@ function RadarChart(id, data, options) {
 	}//if
 
 	//If the supplied maxValue is smaller than the actual one, replace by the max in the data
-	var maxValue = Math.max(cfg.maxValue, d3.max(data, function(i){return d3.max(i.features.map(function(o){return o.value;}))}));
+	var maxValue = Math.max(cfg.maxValue, d3.max(data.classes, function(i){return d3.max(i.features.map(function(o){return o.value;}))}));
 		
-	var allAxis = (data[0].features.map(function(i, j){return i.axis})),	//Names of each axis
+	var allAxis = (data.classes[0].features.map(function(i, j){return i.axis})),	//Names of each axis
 		total = allAxis.length,					//The number of different axes
 		radius = Math.min(cfg.w/2, cfg.h/2), 	//Radius of the outermost circle
 		Format = d3.format('%'),			 	//Percentage formatting
@@ -58,16 +67,16 @@ function RadarChart(id, data, options) {
 	/////////////////////////////////////////////////////////
 
 	//Remove whatever chart with the same id/class was present before
-	d3.select(id).select("svg").remove();
+	d3.select("#" + id).select("svg").remove();
 	
 	//Initiate the radar chart SVG
-	var svg = d3.select(id).append("svg")
+	var svg = d3.select("#" + id).append("svg")
 			.attr("width",  cfg.w + cfg.margin.left + cfg.margin.right)
 			.attr("height", cfg.h + cfg.margin.top + cfg.margin.bottom)
-			.attr("class", "radar"+id);
+			.attr("class", "radar"+"#"+id);
 	//Append a g element		
 	var g = svg.append("g")
-			.attr("transform", "translate(" + (cfg.w/2 + cfg.margin.left) + "," + (cfg.h/2 + cfg.margin.top) + ")");
+			.attr("transform", "translate(" + (cfg.chartHorizontalLocation * cfg.w + cfg.margin.left) + "," + (cfg.chartVerticalLocation * cfg.h + cfg.margin.top) + ")");
 	
 	/////////////////////////////////////////////////////////
 	////////// Glow filter for some extra pizzazz ///////////
@@ -129,7 +138,7 @@ function RadarChart(id, data, options) {
 	}
 
 	//Text indicating at what % each level is
-	axisGrid.selectAll(".axisLabel")
+	/*axisGrid.selectAll(".axisLabel")
 	   .data(d3.range(1,(cfg.levels+1)).reverse())
 	   .enter().append("text")
 	   .attr("class", "axisLabel")
@@ -138,7 +147,7 @@ function RadarChart(id, data, options) {
 	   .attr("dy", "0.4em")
 	   .style("font-size", "10px")
 	   .attr("fill", "#737373")
-	   .text(function(d,i) { return Format(maxValue * d/cfg.levels); });
+	   .text(function(d,i) { return Format(maxValue * d/cfg.levels); });*/
 
 	/////////////////////////////////////////////////////////
 	//////////////////// Draw the axes //////////////////////
@@ -163,7 +172,7 @@ function RadarChart(id, data, options) {
 	//Append the labels at each axis
 	axis.append("text")
 		.attr("class", "legend")
-		.style("font-size", "11px")
+		.style("font-size", cfg.labelSize + "px")
 		.attr("text-anchor", "middle")
 		.attr("dy", "0.35em")
 		.attr("x", function(d, i){ return rScale(maxValue * cfg.labelFactor) * Math.sin(angleSlice*i); })
@@ -187,7 +196,7 @@ function RadarChart(id, data, options) {
 				
 	//Create a wrapper for the blobs	
 	var blobWrapper = g.selectAll(".radarWrapper")
-		.data(data)
+		.data(data.classes)
 		.enter().append("g")
 		.attr("class", "radarWrapper")
 		.attr("id", function(d,i) { return d.name; });
@@ -197,7 +206,7 @@ function RadarChart(id, data, options) {
 		.append("path")
 		.attr("class", "radarArea")
 		.attr("d", function(d,i) { return radarLine(d.features); })
-		.style("fill", function(d,i) { return cfg.color(i); })
+		.style("fill", function(d,i) { if (i == data.classes.length - 1) { return cfg.inputColor; } return cfg.color(i); })
 		.style("fill-opacity", cfg.opacityArea)
 		/*.on('mouseover', function (d,i){
 			//Dim all blobs
@@ -255,7 +264,7 @@ function RadarChart(id, data, options) {
 		.attr("class", "radarStroke")
 		.attr("d", function(d,i) { return radarLine(d.features); })
 		.style("stroke-width", cfg.strokeWidth + "px")
-		.style("stroke", function(d,i) { return cfg.color(i); })
+		.style("stroke", function(d,i) { if (i == data.classes.length - 1) { return cfg.inputColor; } return cfg.color(i); })
 		.style("fill", "none")
 		.style("filter" , "url(#glow)");		
 	
@@ -267,7 +276,7 @@ function RadarChart(id, data, options) {
 		.attr("r", cfg.dotRadius)
 		.attr("cx", function(d,i){ return rScale(d.value) * Math.cos(angleSlice*i - Math.PI/2); })
 		.attr("cy", function(d,i){ return rScale(d.value) * Math.sin(angleSlice*i - Math.PI/2); })
-		.style("fill", function(d,i,j) { return cfg.color(j); })
+		.style("fill", function(d,i,j) { if (j == data.classes.length - 1) { return cfg.inputColor; } return cfg.color(j); })
 		.style("fill-opacity", 0.8);
 
 	/////////////////////////////////////////////////////////
@@ -276,7 +285,7 @@ function RadarChart(id, data, options) {
 	
 	//Wrapper for the invisible circles on top
 	var blobCircleWrapper = g.selectAll(".radarCircleWrapper")
-		.data(data)
+		.data(data.classes)
 		.enter().append("g")
 		.attr("class", "radarCircleWrapper");
 		
@@ -313,32 +322,43 @@ function RadarChart(id, data, options) {
 		
 		
 	////////////////////////////////////////////
+	/////////// Initiate title ////////////////
+	////////////////////////////////////////////
+
+	var titleG = svg.append('g')
+		.attr("transform", "translate(" + (cfg.titleHorizontalLocation * cfg.w + cfg.margin.left) + "," + (cfg.titleVerticalLocation * cfg.h + cfg.margin.top) + ")");
+
+	//Create the title for the legend
+	var text = titleG.append("text")
+		.attr("class", "title")
+		.style("font-size", cfg.titleSize + "px")
+		.style("fill", "#404040")
+		.style("font-weight", "bold")
+		.text(data.name);
+		
+	////////////////////////////////////////////
 	/////////// Initiate legend ////////////////
 	////////////////////////////////////////////
 
-	var legendSvg = svg.append('svg')
-		.attr("width", cfg.w+300)
-		.attr("height", cfg.h)
+	var legendG = svg.append('g')
+		.attr("transform", "translate(" + (cfg.legendHorizontalLocation * cfg.w + cfg.margin.left) + "," + (cfg.legendVerticalLocation * cfg.h + cfg.margin.top) + ")");
 
 	//Create the title for the legend
-	var text = legendSvg.append("text")
+	var text = legendG.append("text")
 		.attr("class", "title")
-		.attr('transform', 'translate(90,0)') 
-		.attr("x", cfg.w - 70)
-		.attr("y", 10)
-		.attr("font-size", "12px")
-		.attr("fill", "#404040")
+		.style("font-size", cfg.legendSize + "px")
+		.style("fill", "#404040")
 		.text("Legend");
 		
 	//Initiate Legend	
-	var legend = legendSvg.append("g")
+	var legend = legendG.append("g")
 		.attr("class", "legend")
 		.attr("height", 100)
 		.attr("width", 200)
-		.attr('transform', 'translate(90,20)') 
+		.attr('transform', 'translate(0,10)') 
 		;
 	var individualLeg =	legend.selectAll("g")
-		  .data(data)
+		  .data(data.classes)
 		  .enter()
 		  .append("g")
 		  .attr("class", "individualLeg")
@@ -346,35 +366,38 @@ function RadarChart(id, data, options) {
 		  .attr("width", 200)
 		  .on('mouseover', function (d,i){
 			//Dim all blobs
-			d3.selectAll(".radarWrapper")
+			d3.selectAll("#" + id + " .radarWrapper")
 				.transition().duration(200)
 				.style("opacity", 0.1); 
 			//Bring back the hovered over blob
-			d3.select("#" + d.name)
+			d3.select("#" + id + " [id='" + d.name + "']")
+				.transition().duration(200)
+				.style("opacity", 1);	
+			d3.select("#" + id + " [id='" + data.classes[data.classes.length - 1].name + "']")
 				.transition().duration(200)
 				.style("opacity", 1);	
 			})
 		  .on('mouseout', function(){
 				//Bring back all blobs
-				d3.selectAll(".radarWrapper")
+				d3.selectAll("#" + id + " .radarWrapper")
 					.transition().duration(200)
 					.style("opacity", 1);
 		  });
 		//Create colour squares
 		individualLeg
 		  .append("rect")
-		  .attr("x", cfg.w - 65)
+		  .attr("x", 5)
 		  .attr("y", function(d, i){ return i * 20;})
 		  .attr("width", 10)
 		  .attr("height", 10)
-		  .style("fill", function(d, i){ return cfg.color(i);});
+		  .style("fill", function(d, i){ if (i == data.classes.length - 1) { return cfg.inputColor; } return cfg.color(i);});
 		//Create text next to squares
 		individualLeg
 		  .append("text")
-		  .attr("x", cfg.w - 52)
+		  .attr("x", 20)
 		  .attr("y", function(d, i){ return i * 20 + 9;})
-		  .attr("font-size", "11px")
-		  .attr("fill", "#737373")
+		  .style("font-size", cfg.labelSize + "px")
+		  .style("fill", "#737373")
 		  .text(function(d) { return d.name; })
 		  ;
 	

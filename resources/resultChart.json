@@ -1,0 +1,1608 @@
+{
+	"data": {
+		"quran_concepts": {
+			"all": [{
+					"dom_score": 0.9697535909734326,
+					"score": 0.18822076986130135,
+					"end": 14,
+					"text": "hacker group",
+					"begin": 2,
+					"c_score": 5.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 54,
+					"text": "credit cards",
+					"begin": 42,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 84,
+					"text": "position",
+					"begin": 76,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 174,
+					"text": "2000 payment terminals",
+					"begin": 152,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 214,
+					"text": "Trinity point of sales malware",
+					"begin": 184,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 1.044956566442268,
+					"score": 0.0,
+					"end": 191,
+					"text": "Trinity",
+					"begin": 184,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 1.1201595419111032,
+					"score": 0.8568343303553672,
+					"end": 206,
+					"text": "point of sales",
+					"begin": 192,
+					"c_score": 2.1699250014423126
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 214,
+					"text": "sales malware",
+					"begin": 201,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 237,
+					"text": "Security firm FireEye",
+					"begin": 216,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 254,
+					"text": "subsidiaries",
+					"begin": 242,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 261,
+					"text": "iSIGHT",
+					"begin": 255,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 1.1201595419111032,
+					"score": 0.0,
+					"end": 270,
+					"text": "Partners",
+					"begin": 262,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 283,
+					"text": "Mandiant",
+					"begin": 275,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 307,
+					"text": "Fin6 group",
+					"begin": 297,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 12.325402886767561,
+					"score": 0.0,
+					"end": 301,
+					"text": "Fin6",
+					"begin": 297,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 317,
+					"text": "last year",
+					"begin": 308,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 365,
+					"text": "millions of cards",
+					"begin": 348,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 365,
+					"text": "cards",
+					"begin": 360,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 386,
+					"text": "two firms",
+					"begin": 377,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 411,
+					"text": "cards stolen",
+					"begin": 399,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 1.0066441703063154,
+					"score": 0.0,
+					"end": 428,
+					"text": "hospitality",
+					"begin": 417,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 446,
+					"text": "firms",
+					"begin": 441,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 508,
+					"text": "hacking group hundreds of millions of dollars",
+					"begin": 463,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 1.0009656458503464,
+					"score": 0.16181826467106836,
+					"end": 476,
+					"text": "hacking group",
+					"begin": 463,
+					"c_score": 4.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 508,
+					"text": "millions of dollars",
+					"begin": 489,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 508,
+					"text": "dollars",
+					"begin": 501,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 528,
+					"text": "card sold",
+					"begin": 519,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 546,
+					"text": "average of",
+					"begin": 536,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 583,
+					"text": "secret popular carder shops",
+					"begin": 556,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 12.325402886767561,
+					"score": -112.73983407320529,
+					"end": 577,
+					"text": "carder",
+					"begin": 571,
+					"c_score": -1.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 598,
+					"text": "criminals",
+					"begin": 589,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 622,
+					"text": "filched cards",
+					"begin": 609,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 665,
+					"text": "cash-out",
+					"begin": 657,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 704,
+					"text": "value of the stolen cards drops",
+					"begin": 673,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 704,
+					"text": "stolen cards drops",
+					"begin": 686,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 718,
+					"text": "United",
+					"begin": 712,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 768,
+					"text": "EMV credit card security.The crooks",
+					"begin": 733,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 12.325402886767561,
+					"score": -112.73983407320529,
+					"end": 761,
+					"text": "security.The",
+					"begin": 749,
+					"c_score": -1.0
+				},
+				{
+					"dom_score": 0.9090380985752912,
+					"score": -0.033077975311100793,
+					"end": 768,
+					"text": "crooks",
+					"begin": 762,
+					"c_score": -1.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 795,
+					"text": "valid user credentials",
+					"begin": 773,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 810,
+					"text": "access",
+					"begin": 804,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 867,
+					"text": "modules of the popular Metasploit framework",
+					"begin": 824,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 867,
+					"text": "popular Metasploit framework",
+					"begin": 839,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 12.325402886767561,
+					"score": -169.10975110980792,
+					"end": 857,
+					"text": "Metasploit",
+					"begin": 847,
+					"c_score": -1.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 899,
+					"text": "foothold",
+					"begin": 891,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 916,
+					"text": "links",
+					"begin": 911,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 949,
+					"text": "command and control servers",
+					"begin": 922,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.9322120190125973,
+					"score": -0.07837552654940406,
+					"end": 929,
+					"text": "command",
+					"begin": 922,
+					"c_score": -1.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 941,
+					"text": "control",
+					"begin": 934,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 970,
+					"text": "shellcode",
+					"begin": 961,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 992,
+					"text": "group",
+					"begin": 987,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1041,
+					"text": "advanced-persistent threat cookbook",
+					"begin": 1006,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.9697535909734326,
+					"score": -0.03764415397226027,
+					"end": 1041,
+					"text": "cookbook",
+					"begin": 1033,
+					"c_score": -1.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1064,
+					"text": "various tools",
+					"begin": 1051,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1093,
+					"text": "privilege escalation",
+					"begin": 1073,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1146,
+					"text": "sensitive areas of the targeted network",
+					"begin": 1107,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1146,
+					"text": "targeted network",
+					"begin": 1130,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1153,
+					"text": "Tools",
+					"begin": 1148,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1199,
+					"text": "three dusty patched vulnerabilities",
+					"begin": 1164,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 12.325402886767561,
+					"score": -112.73983407320529,
+					"end": 1183,
+					"text": "patched",
+					"begin": 1176,
+					"c_score": -1.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1214,
+					"text": "CVE-2013-3660",
+					"begin": 1201,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1248,
+					"text": "CVE-2010-4398",
+					"begin": 1235,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1271,
+					"text": "local users",
+					"begin": 1260,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1294,
+					"text": "kernel-level gods",
+					"begin": 1277,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 1.1478734640830017,
+					"score": -0.0538414093015218,
+					"end": 1294,
+					"text": "gods",
+					"begin": 1290,
+					"c_score": -1.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1312,
+					"text": "PsExec",
+					"begin": 1306,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1330,
+					"text": "Metasploit module",
+					"begin": 1313,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 12.325402886767561,
+					"score": -169.10975110980792,
+					"end": 1323,
+					"text": "Metasploit",
+					"begin": 1313,
+					"c_score": -1.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1367,
+					"text": "Active Directory database",
+					"begin": 1342,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.9697535909734326,
+					"score": -0.07528830794452054,
+					"end": 1358,
+					"text": "Directory",
+					"begin": 1349,
+					"c_score": -1.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1377,
+					"text": "ntds.dit",
+					"begin": 1369,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1411,
+					"text": "password hashes",
+					"begin": 1396,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.925762670381511,
+					"score": -0.03430631552203519,
+					"end": 1411,
+					"text": "hashes",
+					"begin": 1405,
+					"c_score": -1.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1426,
+					"text": "online",
+					"begin": 1420,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1438,
+					"text": "one day",
+					"begin": 1431,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1464,
+					"text": "researchers",
+					"begin": 1453,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 12.325402886767561,
+					"score": 0.0,
+					"end": 1470,
+					"text": "Fin6",
+					"begin": 1466,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1501,
+					"text": "900 SQL servers gaining",
+					"begin": 1478,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1519,
+					"text": "intel information",
+					"begin": 1502,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.9090380985752912,
+					"score": 0.0,
+					"end": 1507,
+					"text": "intel",
+					"begin": 1502,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1557,
+					"text": "further hacking operations",
+					"begin": 1531,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1613,
+					"text": "exfiltration of point of sales data once collected",
+					"begin": 1563,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1613,
+					"text": "point of sales data once collected",
+					"begin": 1579,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 1.1201595419111032,
+					"score": 0.8568343303553672,
+					"end": 1593,
+					"text": "point of sales",
+					"begin": 1579,
+					"c_score": 2.1699250014423126
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1613,
+					"text": "sales data once collected",
+					"begin": 1588,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 12.325402886767561,
+					"score": -225.47966814641057,
+					"end": 1598,
+					"text": "data",
+					"begin": 1594,
+					"c_score": -1.0
+				},
+				{
+					"dom_score": 1.044956566442268,
+					"score": 0.0,
+					"end": 1629,
+					"text": "Trinity",
+					"begin": 1622,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1651,
+					"text": "few more steps",
+					"begin": 1637,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.9726406925780012,
+					"score": 0.0,
+					"end": 1640,
+					"text": "few",
+					"begin": 1637,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 12.325402886767561,
+					"score": 0.0,
+					"end": 1668,
+					"text": "FIN6",
+					"begin": 1664,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1682,
+					"text": "script",
+					"begin": 1676,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1750,
+					"text": "list of compromised POS systems",
+					"begin": 1719,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1750,
+					"text": "compromised POS systems",
+					"begin": 1727,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 12.325402886767561,
+					"score": -112.73983407320529,
+					"end": 1742,
+					"text": "POS",
+					"begin": 1739,
+					"c_score": -1.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1790,
+					"text": "harvested track data files",
+					"begin": 1764,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 12.325402886767561,
+					"score": -225.47966814641057,
+					"end": 1784,
+					"text": "data",
+					"begin": 1780,
+					"c_score": -1.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1813,
+					"text": "numbered log file",
+					"begin": 1796,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1853,
+					"text": "original data files",
+					"begin": 1834,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1883,
+					"text": "log",
+					"begin": 1880,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1908,
+					"text": "ZIP archive",
+					"begin": 1897,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.9697535909734326,
+					"score": 0.0,
+					"end": 1900,
+					"text": "ZIP",
+					"begin": 1897,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1930,
+					"text": "archive",
+					"begin": 1923,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1954,
+					"text": "environment",
+					"begin": 1943,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 1980,
+					"text": "intermediary system",
+					"begin": 1961,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 2009,
+					"text": "staging system",
+					"begin": 1995,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 2034,
+					"text": "staging system",
+					"begin": 2020,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 2068,
+					"text": "stolen data",
+					"begin": 2057,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 12.325402886767561,
+					"score": -225.47966814641057,
+					"end": 2068,
+					"text": "data",
+					"begin": 2064,
+					"c_score": -1.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 2134,
+					"text": "external command and control servers under their control using",
+					"begin": 2072,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.9322120190125973,
+					"score": -0.07837552654940406,
+					"end": 2088,
+					"text": "command",
+					"begin": 2081,
+					"c_score": -1.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 2100,
+					"text": "control",
+					"begin": 2093,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 2128,
+					"text": "control",
+					"begin": 2121,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.0,
+					"score": 0.0,
+					"end": 2163,
+					"text": "FTP command line utility",
+					"begin": 2139,
+					"c_score": 0.0
+				},
+				{
+					"dom_score": 0.9322120190125973,
+					"score": -0.07837552654940406,
+					"end": 2150,
+					"text": "command",
+					"begin": 2143,
+					"c_score": -1.0
+				}
+			]
+		},
+		"profiling": {
+			"features": {
+				"COORD": {
+					"featureName": "COORD",
+					"type": "dependency",
+					"value": 1.6
+				},
+				"BRACKET_CLOSE_RATIO": {
+					"featureName": "BRACKET_CLOSE_RATIO",
+					"type": "characterBased",
+					"value": 0.0
+				},
+				"STD_CHAR_LENGTH": {
+					"featureName": "STD_CHAR_LENGTH",
+					"type": "sentenceBased",
+					"value": 77.60824698445391
+				},
+				"MEAN_MAX_WIDTH": {
+					"featureName": "MEAN_MAX_WIDTH",
+					"type": "dependency",
+					"value": 5.6
+				},
+				"DIGIT_RATIO": {
+					"featureName": "DIGIT_RATIO",
+					"type": "characterBased",
+					"value": 0.02356746765249538
+				},
+				"JJR": {
+					"featureName": "JJR",
+					"type": "pos",
+					"value": 0.1
+				},
+				"QUESTION_OPEN_RATIO": {
+					"featureName": "QUESTION_OPEN_RATIO",
+					"type": "characterBased",
+					"value": 0.0
+				},
+				"RELIGIOUS_WORD_RATIO": {
+					"featureName": "RELIGIOUS_WORD_RATIO",
+					"type": "radicalization",
+					"value": 0.0026595744680851063
+				},
+				"DOUBLE_QUOTE_RATIO": {
+					"featureName": "DOUBLE_QUOTE_RATIO",
+					"type": "characterBased",
+					"value": 0.0
+				},
+				"VBD": {
+					"featureName": "VBD",
+					"type": "pos",
+					"value": 1.3
+				},
+				"VBG": {
+					"featureName": "VBG",
+					"type": "pos",
+					"value": 0.7
+				},
+				"MEAN_MAX_DEPTH": {
+					"featureName": "MEAN_MAX_DEPTH",
+					"type": "dependency",
+					"value": 10.1
+				},
+				"UTF_8_HYPHEN_RATIO": {
+					"featureName": "UTF_8_HYPHEN_RATIO",
+					"type": "characterBased",
+					"value": 0.0
+				},
+				"AMOD": {
+					"featureName": "AMOD",
+					"type": "dependency",
+					"value": 0.1
+				},
+				"SUB": {
+					"featureName": "SUB",
+					"type": "dependency",
+					"value": 0.6
+				},
+				"LOC": {
+					"featureName": "LOC",
+					"type": "dependency",
+					"value": 0.1
+				},
+				"VICTORY_WORD_RATIO": {
+					"featureName": "VICTORY_WORD_RATIO",
+					"type": "radicalization",
+					"value": 0.0026595744680851063
+				},
+				"VBN": {
+					"featureName": "VBN",
+					"type": "pos",
+					"value": 1.7
+				},
+				"#": {
+					"featureName": "#",
+					"type": "pos",
+					"value": 0.1
+				},
+				"PERSON": {
+					"featureName": "PERSON",
+					"type": "nerBased",
+					"value": 0.0026595744680851063
+				},
+				"$": {
+					"featureName": "$",
+					"type": "pos",
+					"value": 0.3
+				},
+				"IM": {
+					"featureName": "IM",
+					"type": "dependency",
+					"value": 0.8
+				},
+				"IN": {
+					"featureName": "IN",
+					"type": "pos",
+					"value": 3.6
+				},
+				"VBP": {
+					"featureName": "VBP",
+					"type": "pos",
+					"value": 0.7
+				},
+				"WDT": {
+					"featureName": "WDT",
+					"type": "pos",
+					"value": 0.2
+				},
+				"MEAN_RAM_FACTOR": {
+					"featureName": "MEAN_RAM_FACTOR",
+					"type": "dependency",
+					"value": 1.7860927121526118
+				},
+				",": {
+					"featureName": ",",
+					"type": "pos",
+					"value": 1.1
+				},
+				"EXCLAMATION_CLOSE_RATIO": {
+					"featureName": "EXCLAMATION_CLOSE_RATIO",
+					"type": "characterBased",
+					"value": 0.0
+				},
+				".": {
+					"featureName": ".",
+					"type": "pos",
+					"value": 1.0
+				},
+				"VBZ": {
+					"featureName": "VBZ",
+					"type": "pos",
+					"value": 0.6
+				},
+				"NER_RATIO": {
+					"featureName": "NER_RATIO",
+					"type": "nerBased",
+					"value": 0.015957446808510637
+				},
+				"VOCABULARY_RICHNESS": {
+					"featureName": "VOCABULARY_RICHNESS",
+					"type": "wordBased",
+					"value": 0.5478723404255319
+				},
+				"RB": {
+					"featureName": "RB",
+					"type": "pos",
+					"value": 0.8
+				},
+				"UTF_8_DOUBLE_QUOTE_CLOSE_RATIO": {
+					"featureName": "UTF_8_DOUBLE_QUOTE_CLOSE_RATIO",
+					"type": "characterBased",
+					"value": 0.0
+				},
+				"CONJ": {
+					"featureName": "CONJ",
+					"type": "dependency",
+					"value": 1.4
+				},
+				":": {
+					"featureName": ":",
+					"type": "pos",
+					"value": 0.1
+				},
+				"RP": {
+					"featureName": "RP",
+					"type": "pos",
+					"value": 0.2
+				},
+				"JJ": {
+					"featureName": "JJ",
+					"type": "pos",
+					"value": 2.0
+				},
+				"LOCATION": {
+					"featureName": "LOCATION",
+					"type": "nerBased",
+					"value": 0.0026595744680851063
+				},
+				"PARENTHESIS_OPEN_RATIO": {
+					"featureName": "PARENTHESIS_OPEN_RATIO",
+					"type": "characterBased",
+					"value": 0.0013863216266173752
+				},
+				"-LRB-": {
+					"featureName": "-LRB-",
+					"type": "pos",
+					"value": 0.3
+				},
+				"P": {
+					"featureName": "P",
+					"type": "dependency",
+					"value": 2.2
+				},
+				"ORGANIZATION": {
+					"featureName": "ORGANIZATION",
+					"type": "nerBased",
+					"value": 0.010638297872340425
+				},
+				"CHARSINPARENTHESES_RATIO": {
+					"featureName": "CHARSINPARENTHESES_RATIO",
+					"type": "characterBased",
+					"value": 0.03789279112754159
+				},
+				"BRACKET_OPEN_RATIO": {
+					"featureName": "BRACKET_OPEN_RATIO",
+					"type": "characterBased",
+					"value": 0.0
+				},
+				"CC": {
+					"featureName": "CC",
+					"type": "pos",
+					"value": 1.3
+				},
+				"CD": {
+					"featureName": "CD",
+					"type": "pos",
+					"value": 1.5
+				},
+				"DIR": {
+					"featureName": "DIR",
+					"type": "dependency",
+					"value": 0.3
+				},
+				"CHARS_PER_SENTENCE": {
+					"featureName": "CHARS_PER_SENTENCE",
+					"type": "sentenceBased",
+					"value": 216.4
+				},
+				"APPO": {
+					"featureName": "APPO",
+					"type": "dependency",
+					"value": 0.6
+				},
+				"PRP$": {
+					"featureName": "PRP$",
+					"type": "pos",
+					"value": 0.1
+				},
+				"POSITIVE_EXPRESSION_RATIO": {
+					"featureName": "POSITIVE_EXPRESSION_RATIO",
+					"type": "sentiment",
+					"value": 0.15425531914893617
+				},
+				"PARENTHESIS_CLOSE_RATIO": {
+					"featureName": "PARENTHESIS_CLOSE_RATIO",
+					"type": "characterBased",
+					"value": 0.0013863216266173752
+				},
+				"SINGLE_QUOTE_RATIO": {
+					"featureName": "SINGLE_QUOTE_RATIO",
+					"type": "characterBased",
+					"value": 0.0
+				},
+				"TO": {
+					"featureName": "TO",
+					"type": "pos",
+					"value": 1.3
+				},
+				"CHARS_PER_WORD": {
+					"featureName": "CHARS_PER_WORD",
+					"type": "wordBased",
+					"value": 5.75531914893617
+				},
+				"ACRONYM_RATIO": {
+					"featureName": "ACRONYM_RATIO",
+					"type": "wordBased",
+					"value": 0.0
+				},
+				"UTF_8_DOTS_RATIO": {
+					"featureName": "UTF_8_DOTS_RATIO",
+					"type": "characterBased",
+					"value": 0.0
+				},
+				"SEMICOLON_RATIO": {
+					"featureName": "SEMICOLON_RATIO",
+					"type": "characterBased",
+					"value": 0.0
+				},
+				"PRP": {
+					"featureName": "PRP",
+					"type": "dependency",
+					"value": 0.1
+				},
+				"DT": {
+					"featureName": "DT",
+					"type": "pos",
+					"value": 3.8
+				},
+				"NNP": {
+					"featureName": "NNP",
+					"type": "pos",
+					"value": 1.1
+				},
+				"NNS": {
+					"featureName": "NNS",
+					"type": "pos",
+					"value": 4.1
+				},
+				"QUESTION_CLOSE_RATIO": {
+					"featureName": "QUESTION_CLOSE_RATIO",
+					"type": "characterBased",
+					"value": 0.0
+				},
+				"ADV": {
+					"featureName": "ADV",
+					"type": "dependency",
+					"value": 1.6
+				},
+				"PRT": {
+					"featureName": "PRT",
+					"type": "dependency",
+					"value": 0.2
+				},
+				"DOT_RATIO": {
+					"featureName": "DOT_RATIO",
+					"type": "characterBased",
+					"value": 0.005545286506469501
+				},
+				"UTF_8_DOUBLE_QUOTE_OPEN_RATIO": {
+					"featureName": "UTF_8_DOUBLE_QUOTE_OPEN_RATIO",
+					"type": "characterBased",
+					"value": 0.0
+				},
+				"TWO_WORDS": {
+					"featureName": "TWO_WORDS",
+					"type": "wordBased",
+					"value": 0.11170212765957446
+				},
+				"RANGE_WORD_LENGTH": {
+					"featureName": "RANGE_WORD_LENGTH",
+					"type": "wordBased",
+					"value": 18.0
+				},
+				"STD_WORD_LENGTH": {
+					"featureName": "STD_WORD_LENGTH",
+					"type": "wordBased",
+					"value": 2.8470505554164878
+				},
+				"VB": {
+					"featureName": "VB",
+					"type": "pos",
+					"value": 0.9
+				},
+				"VC": {
+					"featureName": "VC",
+					"type": "dependency",
+					"value": 0.7
+				},
+				"NAME": {
+					"featureName": "NAME",
+					"type": "dependency",
+					"value": 0.4
+				},
+				"RADICALIZATION_WORD_CANDIDATE_RATIO": {
+					"featureName": "RADICALIZATION_WORD_CANDIDATE_RATIO",
+					"type": "radicalization",
+					"value": 0.023936170212765957
+				},
+				"STOPWORD_RATIO": {
+					"featureName": "STOPWORD_RATIO",
+					"type": "wordBased",
+					"value": 0.3776595744680851
+				},
+				"EX": {
+					"featureName": "EX",
+					"type": "pos",
+					"value": 0.1
+				},
+				"PMOD": {
+					"featureName": "PMOD",
+					"type": "dependency",
+					"value": 3.8
+				},
+				"-RRB-": {
+					"featureName": "-RRB-",
+					"type": "pos",
+					"value": 0.3
+				},
+				"UPPERCASE_RATIO": {
+					"featureName": "UPPERCASE_RATIO",
+					"type": "characterBased",
+					"value": 0.02911275415896488
+				},
+				"ENEMY_WORD_RATIO": {
+					"featureName": "ENEMY_WORD_RATIO",
+					"type": "radicalization",
+					"value": 0.005319148936170213
+				},
+				"NN": {
+					"featureName": "NN",
+					"type": "pos",
+					"value": 7.7
+				},
+				"NEGATIVE_EXPRESSION_RATIO": {
+					"featureName": "NEGATIVE_EXPRESSION_RATIO",
+					"type": "sentiment",
+					"value": 0.0
+				},
+				"EMOTION_WORD_RATIO": {
+					"featureName": "EMOTION_WORD_RATIO",
+					"type": "radicalization",
+					"value": 0.0
+				},
+				"WAR_WORD_RATIO": {
+					"featureName": "WAR_WORD_RATIO",
+					"type": "radicalization",
+					"value": 0.013297872340425532
+				},
+				"MNR": {
+					"featureName": "MNR",
+					"type": "dependency",
+					"value": 0.2
+				},
+				"OBJ": {
+					"featureName": "OBJ",
+					"type": "dependency",
+					"value": 3.8
+				},
+				"SBJ": {
+					"featureName": "SBJ",
+					"type": "dependency",
+					"value": 2.1
+				},
+				"COLON_RATIO": {
+					"featureName": "COLON_RATIO",
+					"type": "characterBased",
+					"value": 4.621072088724584E-4
+				},
+				"HYPHEN_RATIO": {
+					"featureName": "HYPHEN_RATIO",
+					"type": "characterBased",
+					"value": 0.004158964879852125
+				},
+				"EXCLAMATION_OPEN_RATIO": {
+					"featureName": "EXCLAMATION_OPEN_RATIO",
+					"type": "characterBased",
+					"value": 0.0
+				},
+				"THREE_WORDS": {
+					"featureName": "THREE_WORDS",
+					"type": "wordBased",
+					"value": 0.1675531914893617
+				},
+				"NNPS": {
+					"featureName": "NNPS",
+					"type": "pos",
+					"value": 0.1
+				},
+				"COMMA_RATIO": {
+					"featureName": "COMMA_RATIO",
+					"type": "characterBased",
+					"value": 0.005083179297597043
+				},
+				"RANGE_CHAR_LENGTH": {
+					"featureName": "RANGE_CHAR_LENGTH",
+					"type": "sentenceBased",
+					"value": 256.0
+				},
+				"DEP": {
+					"featureName": "DEP",
+					"type": "dependency",
+					"value": 0.9
+				},
+				"PUT": {
+					"featureName": "PUT",
+					"type": "dependency",
+					"value": 0.1
+				},
+				"NMOD": {
+					"featureName": "NMOD",
+					"type": "dependency",
+					"value": 13.2
+				},
+				"TMP": {
+					"featureName": "TMP",
+					"type": "dependency",
+					"value": 1.0
+				},
+				"OPRD": {
+					"featureName": "OPRD",
+					"type": "dependency",
+					"value": 0.8
+				},
+				"UTF_8_APOSTROPHE_RATIO": {
+					"featureName": "UTF_8_APOSTROPHE_RATIO",
+					"type": "characterBased",
+					"value": 0.0
+				}
+			},
+			"religousness_quran": 1.4640599970272796,
+			"gender": "male",
+			"Predictions": [{
+					"modelName": "revistasTrainBalanced.model",
+					"possible labels": "rome,Dabiq,azan,inspire,Risalah",
+					"confidence": 1.0,
+					"prediction": "azan",
+					"type": "prediction"
+				},
+				{
+					"modelName": "gender_small.model",
+					"possible labels": "female,male",
+					"confidence": 1.0,
+					"prediction": "female",
+					"type": "prediction"
+				},
+				{
+					"modelName": "kaggle3.model",
+					"possible labels": "MediaPoliticianorAnalyst,Tafsir,Hadith,MuslimHistoricalFigure,Sira,Poetry,Fatwa,Quran,Bible,ClassicalIslamicScholar,ContemporaryScholar,Islamist,Fiqh,ShiaScholar,WesternHistoricalFigure,HadithCommentary,ReligiousScholar,Jihadist,Salaf,ClassicalScholar,Christian",
+					"confidence": 1.0,
+					"prediction": "ClassicalScholar",
+					"type": "prediction"
+				},
+				{
+					"modelName": "ideologos.model",
+					"possible labels": "musaCerantonio.txt,alBaghdadi.txt,alNusra.txt,alMaqdisi.txt,alAdnani.txt,alKhorasani.txt",
+					"confidence": 1.0,
+					"prediction": "musaCerantonio.txt",
+					"type": "prediction"
+				}
+			],
+			"RadicalizationWordCandidates": [{
+					"wordCategory": "WAR_WORD",
+					"end": 224,
+					"text": "security",
+					"type": "radicalization word",
+					"begin": 216
+				},
+				{
+					"wordCategory": "ENEMY_WORD",
+					"end": 598,
+					"text": "criminal",
+					"type": "radicalization word",
+					"begin": 589
+				},
+				{
+					"wordCategory": "WAR_WORD",
+					"end": 960,
+					"text": "execute",
+					"type": "radicalization word",
+					"begin": 953
+				},
+				{
+					"wordCategory": "WAR_WORD",
+					"end": 1032,
+					"text": "threat",
+					"type": "radicalization word",
+					"begin": 1026
+				},
+				{
+					"wordCategory": "ENEMY_WORD",
+					"end": 1032,
+					"text": "threat",
+					"type": "radicalization word",
+					"begin": 1026
+				},
+				{
+					"wordCategory": "WAR_WORD",
+					"end": 1138,
+					"text": "target",
+					"type": "radicalization word",
+					"begin": 1130
+				},
+				{
+					"wordCategory": "RELIGIOUS_WORD",
+					"end": 1294,
+					"text": "god",
+					"type": "radicalization word",
+					"begin": 1290
+				},
+				{
+					"wordCategory": "VICTORY_WORD",
+					"end": 1530,
+					"text": "support",
+					"type": "radicalization word",
+					"begin": 1523
+				},
+				{
+					"wordCategory": "WAR_WORD",
+					"end": 1557,
+					"text": "operation",
+					"type": "radicalization word",
+					"begin": 1547
+				}
+			],
+			"age": "35",
+			"radicalized": "true"
+		},
+		"dbpedia": {},
+		"ner": {
+			"ORGANIZATION": [{
+					"end": 191,
+					"text": "Trinity",
+					"type": "ORGANIZATION",
+					"begin": 184
+				},
+				{
+					"end": 237,
+					"text": "FireEye",
+					"type": "ORGANIZATION",
+					"begin": 230
+				},
+				{
+					"end": 736,
+					"text": "EMV",
+					"type": "ORGANIZATION",
+					"begin": 733
+				},
+				{
+					"end": 1629,
+					"text": "Trinity",
+					"type": "ORGANIZATION",
+					"begin": 1622
+				}
+			],
+			"all": [{
+					"end": 191,
+					"text": "Trinity",
+					"type": "ORGANIZATION",
+					"begin": 184
+				},
+				{
+					"end": 237,
+					"text": "FireEye",
+					"type": "ORGANIZATION",
+					"begin": 230
+				},
+				{
+					"end": 283,
+					"text": "Mandiant",
+					"type": "PERSON",
+					"begin": 275
+				},
+				{
+					"end": 725,
+					"text": "United States",
+					"type": "LOCATION",
+					"begin": 712
+				},
+				{
+					"end": 736,
+					"text": "EMV",
+					"type": "ORGANIZATION",
+					"begin": 733
+				},
+				{
+					"end": 1629,
+					"text": "Trinity",
+					"type": "ORGANIZATION",
+					"begin": 1622
+				}
+			],
+			"LOCATION": [{
+				"end": 725,
+				"text": "United States",
+				"type": "LOCATION",
+				"begin": 712
+			}],
+			"PERSON": [{
+				"end": 283,
+				"text": "Mandiant",
+				"type": "PERSON",
+				"begin": 275
+			}]
+		},
+		"babelnet": {}
+	},
+	"meta": {
+		"message": "analyzed successfully",
+		"code": "0",
+		"status": "ok"
+	}
+}
