@@ -62,6 +62,11 @@ function RadarChart(id, data, options) {
 		.range([0, radius])
 		.domain([0, maxValue]);
 		
+	/*var lScale = d3.scale.log()
+		.range([0, radius])
+		.domain([Math.exp(0), Math.exp(9)])
+		.base(Math.E);*/
+		
 	/////////////////////////////////////////////////////////
 	//////////// Create the container SVG and g /////////////
 	/////////////////////////////////////////////////////////
@@ -118,8 +123,8 @@ function RadarChart(id, data, options) {
 		
 			points[j] = "";
 			for(var i=0; i<total; i++){
-				points[j] += rScale(maxValue * levelFactor) * Math.sin(angleSlice*i) + "," 
-						   + rScale(maxValue * levelFactor) * Math.cos(angleSlice*i) + " ";
+				points[j] += rScale(maxValue * levelFactor) * Math.cos(angleSlice*i - Math.PI/2) + "," 
+						   + rScale(maxValue * levelFactor) * Math.sin(angleSlice*i - Math.PI/2) + " ";
 			}
 		}
 	
@@ -163,8 +168,8 @@ function RadarChart(id, data, options) {
 	axis.append("line")
 		.attr("x1", 0)
 		.attr("y1", 0)
-		.attr("x2", function(d, i){ return rScale(maxValue*1.1) * Math.sin(angleSlice*i); })
-		.attr("y2", function(d, i){ return rScale(maxValue*1.1) * Math.cos(angleSlice*i); })
+		.attr("x2", function(d, i){ return rScale(maxValue*1.1) * Math.cos(angleSlice*i - Math.PI/2); })
+		.attr("y2", function(d, i){ return rScale(maxValue*1.1) * Math.sin(angleSlice*i - Math.PI/2); })
 		.attr("class", "line")
 		.style("stroke", "white")
 		.style("stroke-width", "2px");
@@ -175,8 +180,8 @@ function RadarChart(id, data, options) {
 		.style("font-size", cfg.labelSize + "px")
 		.attr("text-anchor", "middle")
 		.attr("dy", "0.35em")
-		.attr("x", function(d, i){ return rScale(maxValue * cfg.labelFactor) * Math.sin(angleSlice*i); })
-		.attr("y", function(d, i){ return rScale(maxValue * cfg.labelFactor) * Math.cos(angleSlice*i); })
+		.attr("x", function(d, i){ return rScale(maxValue * cfg.labelFactor) * Math.cos(angleSlice*i - Math.PI/2); })
+		.attr("y", function(d, i){ return rScale(maxValue * cfg.labelFactor) * Math.sin(angleSlice*i - Math.PI/2); })
 		.text(function(d){return d})
 		.call(wrap, cfg.wrapWidth);
 

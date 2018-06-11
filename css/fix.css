@@ -1,4 +1,4 @@
-svg {
+#chartComponent svg, #profilingComponent svg {
   width: initial;
   height: initial;
   border: initial;

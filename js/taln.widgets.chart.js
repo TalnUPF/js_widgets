@@ -1,28 +1,16 @@
-function paintChart(base, result, output, options)
-{	
-	var chartNum = 1;
-	var graphsData = [];
+function profilinigToChart(base, result)
+{
+	var chartsData = {};
 	//For each model
 	$.each(base, function(modelNum, value)
 	{
-		//console.log(value["modelName"]);
-		//console.log(value["labels"]);
 		
-		graphsData[value["modelName"]] = [];
-		
-		$("#" + output).append(	"<div class='card'>" +
-		 							"<div class='card-header' id='heading" + modelNum + "'>" + 
-		 								"<button class='btn btn-link collapsed' type='button' data-toggle='collapse' data-target='#collapse" + modelNum + "' aria-expanded='false' aria-controls='collapse" + modelNum + "'>" + value["modelName"] + "</button>" +
-		 							"</div>" +
-		 							"<div id='collapse" + modelNum + "' class='collapse' aria-labelledby='heading" + modelNum + "' data-parent='#" + output + "'>" + 
-										"<div id='" + output + "Model" + modelNum + "'></div>" +
-									"</div>" +
-								"</div>");
+		chartsData[value["modelName"]] = {};
 		
 		//For each graph
 		$.each(value["graphs"], function(k, graph)
 		{
-			graphsData[value["modelName"]][graph["name"]] = {name:graph["name"], classes:[]};
+			chartsData[value["modelName"]][graph["name"]] = {name:graph["name"], classes:[]};
 				
 			//For each class
 			$.each(value["labels"], function(j, label)
@@ -33,7 +21,7 @@ function paintChart(base, result, output, options)
 				{
 					graphData.features.push({axis:feature,value:value[label][feature]});
 				});
-				graphsData[value["modelName"]][graph["name"]].classes.push(graphData);
+				chartsData[value["modelName"]][graph["name"]].classes.push(graphData);
 			
 			});
 			
@@ -58,10 +46,37 @@ function paintChart(base, result, output, options)
 					graphData.features.push({axis:feature,value:0});
 				}
 			});
-			graphsData[value["modelName"]][graph["name"]].classes.push(graphData);
-			
+			chartsData[value["modelName"]][graph["name"]].classes.push(graphData);
+		});
+		
+	});
+	
+	return chartsData;
+};
+
+function paintCharts(chartsData, output, options)
+{	
+	var chartNum = 1;
+	//For each model
+	Object.keys(chartsData).forEach(function (modelKey, modelNum) 
+	{
+		var model = chartsData[modelKey];
+		$("#" + output).append(	"<div class='card'>" +
+		 							"<div class='card-header' id='heading" + modelNum + "'>" + 
+		 								"<button class='btn btn-link collapsed' type='button' data-toggle='collapse' data-target='#collapse" + modelNum + "' aria-expanded='false' aria-controls='collapse" + modelNum + "'>" + modelKey + "</button>" +
+		 							"</div>" +
+		 							"<div id='collapse" + modelNum + "' class='collapse' aria-labelledby='heading" + modelNum + "' data-parent='#" + output + "'>" + 
+										"<div id='" + output + "Model" + modelNum + "'></div>" +
+									"</div>" +
+								"</div>");
+		
+		//For each graph
+		Object.keys(model).forEach(function (graphKey, graphNum) 
+		{
+			var graph = model[graphKey];
 			$("#" + output + "Model" + modelNum).append("<div id='" + output + chartNum + "' style='display: inline-block;'></div>");
-			RadarChart(output + chartNum, graphsData[value["modelName"]][graph["name"]], options);
+			taln.widgets.chart.loadRadar(graph, output + chartNum, options);
+			
 			
 			chartNum++;
 		});
@@ -76,9 +91,8 @@ var taln = taln || {};
 taln.widgets = taln.widgets || {};
 taln.widgets.chart = {
 	
-	loadRadar: function(base, result, output, options){
-	
-		paintChart(base, result, output, radarChartOptions);
+	loadRadar: function(chartData, output, options){
+		RadarChart(output, chartData, options);
 	}
 	
 };

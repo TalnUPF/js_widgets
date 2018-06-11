@@ -25,8 +25,6 @@ taln.widgets.intensity = {
 		var text = data.text;
 		var spans = data.spans;
 		
-		
-		
 		var result = "";
 		var lastSpan = 0;
 		result  += $.map(spans, function(span) {
