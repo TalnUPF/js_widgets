@@ -19,7 +19,7 @@
   
   <!--BRAT-->
   <link rel="stylesheet" type="text/css" href="http://weaver.nlplab.org/~brat/demo/v1.3/style-vis.css"/>
-  <link rel="stylesheet" href="./css/fix.css">
+  <link rel="stylesheet" href="https://rawgit.com/TalnUPF/js_widgets/master/css/fix.css">
   <script type="text/javascript" src="http://weaver.nlplab.org/~brat/demo/v1.3/client/lib/head.load.min.js"></script>
   
   <!--GRAPH-->
@@ -31,69 +31,74 @@
   
   <!--CHART-->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
-  <link rel="stylesheet" href="./external/radar.css">
-  <script type="text/javascript" src="./external/radarChart.js"></script>
+  <link rel="stylesheet" href="https://rawgit.com/TalnUPF/js_widgets/master/external/radar.css">
+  <script type="text/javascript" src="https://rawgit.com/TalnUPF/js_widgets/master/external/radarChart.js"></script>
   
   <!--TALN WIDGETS-->
-  <script type="text/javascript" src="./js/taln.widgets.brat.js"></script>
-  <script type="text/javascript" src="./js/taln.widgets.intensity.js"></script>
-  <script type="text/javascript" src="./js/taln.widgets.graph.js"></script>
-  <script type="text/javascript" src="./js/taln.widgets.chart.js"></script>
+  <script type="text/javascript" src="https://rawgit.com/TalnUPF/js_widgets/master/js/taln.widgets.brat.js"></script>
+  <script type="text/javascript" src="https://rawgit.com/TalnUPF/js_widgets/master/js/taln.widgets.intensity.js"></script>
+  <script type="text/javascript" src="https://rawgit.com/TalnUPF/js_widgets/master/js/taln.widgets.graph.js"></script>
+  <script type="text/javascript" src="https://rawgit.com/TalnUPF/js_widgets/master/js/taln.widgets.chart.js"></script>
+  
+  <!--TALN DEMO-->
+  <link rel="stylesheet" href="https://rawgit.com/TalnUPF/js_widgets/master/css/tensorDemo.css">
 
   <title>TALN Widgets</title>
 </head>
 
 <body>
-  <div class="container-fluid">
-    <h1 align="center">TALN Widgets examples</h1>
-  </div>
-  
-  <div class="container">
 
-		<ul class="nav nav-tabs" id="myTab" role="tablist">
-		  <li class="nav-item">
-			<a class="nav-link active" data-toggle="tab" href="#highlight" role="tab" aria-controls="highlight-tab" aria-selected="true">Highlight</a>
-		  </li>
-		  <li class="nav-item">
-			<a class="nav-link" data-toggle="tab" href="#brat" role="tab" aria-controls="brat-tab" aria-selected="false">Brat</a>
-		  </li>
-		  <li class="nav-item">
-			<a class="nav-link" data-toggle="tab" href="#graph" role="tab" aria-controls="graph-tab" aria-selected="false">Graph</a>
-		  </li>
-		  <li class="nav-item">
-			<a class="nav-link" data-toggle="tab" href="#chart" role="tab" aria-controls="chart-tab" aria-selected="false">Chart</a>
-		  </li>
-		</ul>
+	<div class="container base pb-5">
+	
+		<div class="d-inline-block py-4 px-4 mb-4">
+			<img src="https://rawgit.com/TalnUPF/js_widgets/master/resources/TALN.png" class="float-right pb-2 logo"/>
+  			<span class="header-text">TALN </span><span class="header-text no-wrap">Widgets examples</span>
+		</div>
+		
+		<h3 class="pl-3">Results:</h3>
+	
+		<div class="card">
+			<div class="card-header">
+				<ul class="nav nav-tabs nav-fill card-header-tabs" id="myTab" role="tablist">
+				  <li class="nav-item">
+					<a class="nav-link active" data-toggle="tab" href="#highlight" role="tab" aria-controls="highlight-tab" aria-selected="true">Highlight</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" data-toggle="tab" href="#brat" role="tab" aria-controls="brat-tab" aria-selected="false">Brat</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" data-toggle="tab" href="#graph" role="tab" aria-controls="graph-tab" aria-selected="false">Graph</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" data-toggle="tab" href="#chart" role="tab" aria-controls="chart-tab" aria-selected="false">Chart</a>
+				  </li>
+				</ul>
+		</div>
 
-		<div class="tab-content" id="myTabContent">
+		<div class="tab-content card-body" id="myTabContent">
 			<div class="tab-pane fade show active" id="highlight" role="tabpanel" aria-labelledby="highlight-tab">
-				<form id="highlightForm">
-					<div class="form-group">
-				  		<div id="intensityComponent" class="form-control" style="height: 200px;" contenteditable="true"></div>
-					</div>
-					<button type="submit" class="btn btn-primary btn-lg" id="submitHighlight" data-loading-text="<i class='fa fa-spinner fa-spin'></i> Processing">Analyze</button>
-				</form>
+			  	<div id="intensityComponent" class="form-control" style="height: 200px;" contenteditable="true"></div>
+				<button class="btn btn-primary btn-lg mt-4" id="submitHighlight" data-loading-text="<i class='fa fa-spinner fa-spin'></i> Processing">Analyze</button>
 			</div>
 	
 			<div class="tab-pane fade" id="brat" role="tabpanel" aria-labelledby="brat-tab">
-				<button class="btn btn-primary btn-lg" id="submitBrat" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Processing">Analyze</button>
+				<button class="btn btn-primary btn-lg mb-4" id="submitBrat" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Processing">Analyze</button>
 				<div id="bratContainer">
 					<div id="bratComponent"></div>
 				</div>
 			</div>
 		
 			<div class="tab-pane fade" id="graph" role="tabpanel" aria-labelledby="graph-tab">
-				<button class="btn btn-primary btn-lg" id="submitGraph" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Processing">Analyze</button>
+				<button class="btn btn-primary btn-lg mb-4" id="submitGraph" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Processing">Analyze</button>
 				
-				<div id="graphComponent" style="height: 500px;"></div>
+				<div id="graphComponent"></div>
 			</div>
 		
 			<div class="tab-pane fade" id="chart" role="tabpanel" aria-labelledby="chart-tab">
-				<button class="btn btn-primary btn-lg" id="submitChart" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Processing">Analyze</button>
+				<button class="btn btn-primary btn-lg mb-4" id="submitChart" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Processing">Analyze</button>
 			
-				<div id="chartComponent" style="height: 500px;" class="accordion"></div>
+				<div id="chartComponent" class="accordion"></div>
 			</div>
-		
 		</div>
 	
 	</div>
@@ -108,8 +113,8 @@ head.js(
 	//JQuery and Boostrap already loaded in head section
 
 	// External libraries
-	'./external/jquery.svg.min.js',
-    './external/jquery.svgdom.min.js',
+	'https://rawgit.com/TalnUPF/js_widgets/master/external/jquery.svg.min.js',
+    'https://rawgit.com/TalnUPF/js_widgets/master/external/jquery.svgdom.min.js',
 	
 	// brat helper modules
 	bratLocation + '/client/src/configuration.js',
@@ -121,16 +126,13 @@ head.js(
 	bratLocation + '/client/src/dispatcher.js',
 	bratLocation + '/client/src/url_monitor.js',
 	
-	'./external/visualizer.js'
+	'https://rawgit.com/TalnUPF/js_widgets/master/external/visualizer.js'
 );
 
 function spinButton() {
   var button = $("#btnLoad");
   button.data('original-text', button.html());
   button.html(button.data('loading-text'));
-  setTimeout(function() {
-    button.html(button.data('original-text'));
-  }, 80000);
 }
 
 function unspinButton() {
@@ -138,32 +140,37 @@ function unspinButton() {
   button.html(button.data('original-text'));
 }
 
-var margin = {top: 80, right: 20, bottom: 80, left: 20};
+var margin = {
+    top: 80,
+    right: 20,
+    bottom: 80,
+    left: 20
+};
 
 var color = d3.scale.ordinal()
-				.range(["#3366cc", "#dc3912", "#FFFF00", "#109618", "#990099", "#0099c6", "#dd4477", "#66aa00", "#8B4513", "#316395"]);
+    .range(["#3366cc", "#dc3912", "#FFFF00", "#109618", "#990099", "#0099c6", "#dd4477", "#66aa00", "#8B4513", "#316395"]);
 
 var radarChartOptions = {
-  w: 480,
-  h: 250,
-  margin: margin,
-  maxValue: 0,
-  levels: 5,
-  roundStrokes: false,
-  roundGrid: false,
-  color: color,
-  opacityArea: 0.18,
-  labelFactor: 1.20,
-  wrapWidth: 200,
-  chartHorizontalLocation: 0.4,
-  chartVerticalLocation: 0.5,
-  legendHorizontalLocation: 0.75,
-  legendVerticalLocation: 0,
-  titleHorizontalLocation: 0,
-  titleVerticalLocation: -0.15,
-  labelSize: 9,
-  legendSize: 10,
-  titleSize: 12
+    w: 480,
+    h: 250,
+    margin: margin,
+    maxValue: 0,
+    levels: 5,
+    roundStrokes: false,
+    roundGrid: false,
+    color: color,
+    opacityArea: 0.18,
+    labelFactor: 1.20,
+    wrapWidth: 200,
+    chartHorizontalLocation: 0.4,
+    chartVerticalLocation: 0.5,
+    legendHorizontalLocation: 0.75,
+    legendVerticalLocation: 0,
+    titleHorizontalLocation: 0,
+    titleVerticalLocation: -0.15,
+    labelSize: 9,
+    legendSize: 10,
+    titleSize: 12
 };
 
 var bratData = null;
@@ -175,7 +182,8 @@ function receiveUrlResult (url, data, output) {
 		url: url
 	})
 	.done(function(result) {
-		taln.widgets.chart.loadRadar(result, data, output);
+		var graphsData = profilinigToChart(result, data);
+		paintCharts(graphsData, output, radarChartOptions);
 	})
 	.fail(function(jqXHR, textStatus, errorThrown) {
 		var msg = '';
@@ -293,7 +301,7 @@ function submitGraph(type, url, input, loadingCallback, endLoadingCallback) {
 		})
 		.done(function(result) {
 			$("#graphComponent").empty();
-		
+			$("#graphComponent").css({height: '500px'});
 			taln.widgets.graph.loadGraph(result["data"]["graph"], "graphComponent");
 		})
 		.fail(function(jqXHR, textStatus, errorThrown) {
@@ -332,7 +340,7 @@ function submitChart(type, url, input, loadingCallback, endLoadingCallback) {
 		})
 		.done(function(result) {
 			$("#chartComponent").empty();
-			receiveUrlResult("./resources/baseRadar.json", result["data"]["profiling"], "chartComponent");
+			receiveUrlResult("./resources/baseRadar3.json", result["data"]["profiling"], "chartComponent");
 		})
 		.fail(function(jqXHR, textStatus, errorThrown) {
 			var msg = '';
@@ -359,25 +367,20 @@ function submitChart(type, url, input, loadingCallback, endLoadingCallback) {
 }
 
 head.ready(function() {
-	$("#highlightForm").submit(function(event) {
-      event.preventDefault();
-      
-      var inputText = $("#intensity").text();
+	$("#submitHighlight").click(function() {
+      var inputText = $("#intensityComponent").text();
       submitIntensity("POST", "./resources/resultIntensity.json", inputText, spinButton, unspinButton);
     });
     
     $("#submitBrat").click(function() {
-
       submitBrat("POST", "./resources/resultBrat.json", "", spinButton, unspinButton);
     });
     
     $("#submitGraph").click(function() {
-      
       submitGraph("POST", "./resources/resultGraph.json", "", spinButton, unspinButton);
     });
     
     $("#submitChart").click(function() {
-      
       submitChart("POST", "./resources/resultChart.json", "", spinButton, unspinButton);
     });
 });
