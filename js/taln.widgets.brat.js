@@ -200,6 +200,44 @@ function nerToBrat(text, result)
 	return output;
 }
 
+function dbpediaToBrat(text, result)
+{
+    var createdEntityTypes = [];
+    
+    var output = { data: {documentData: {}, collectionData: {}} };
+    
+    var documentData = { text: text, entities: [], relations: []};
+    var collectionData = {entity_types: []};
+    $.each(result["all"], function(entityNum, entity)
+	{
+		var entityData = [];
+		entityData.push("E" + entityNum);
+		entityData.push(entity.uri);
+		
+		var offsets = [];
+		var offset = [];
+		offset.push(entity.begin);
+		offset.push(entity.end);
+		offsets.push(offset)
+		
+		entityData.push(offsets);
+		documentData.entities.push(entityData);
+		
+		if(!createdEntityTypes.includes(entity.uri)) {
+			var uriCore = entity.uri.substring(entity.uri.lastIndexOf("/") + 1, entity.uri.length);
+		
+			entityType = {type: entity.uri, labels: [uriCore], bgColor: getRandomColor(), borderColor: "darken"};
+			collectionData.entity_types.push(entityType);
+			createdEntityTypes.push(entity.uri);
+		}
+	});
+	
+	output.data.documentData = documentData;
+	output.data.collectionData = collectionData;
+	
+	return output;
+}
+
 function radicalizationToBrat(text, result)
 {
     var createdEntityTypes = [];
