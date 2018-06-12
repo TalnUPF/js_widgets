@@ -2902,7 +2902,7 @@ Util.profileStart('before render');
           if (id = target.attr('data-span-id')) {
         	  var span = data.spans[id];
         	  if(span.extra != null){
-        		  var win = window.open('https://en.wikipedia.org/wiki/'+span.extra, '_blank');
+        		  var win = window.open(span.extra, '_blank');
     	          win.focus();
         	  }
           }

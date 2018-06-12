@@ -149,6 +149,7 @@ function babelnetToBrat(text, result)
 		offsets.push(offset)
 		
 		entityData.push(offsets);
+		entityData.push("http://live.babelnet.org/synset?word=" + encodeURI(entity.id));
 		documentData.entities.push(entityData);
 		
 		if(!createdEntityTypes.includes(entity.id)) {
@@ -221,6 +222,7 @@ function dbpediaToBrat(text, result)
 		offsets.push(offset)
 		
 		entityData.push(offsets);
+		entityData.push(entity.uri);
 		documentData.entities.push(entityData);
 		
 		if(!createdEntityTypes.includes(entity.uri)) {
