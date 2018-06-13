@@ -56,8 +56,8 @@ function conceptsToBrat(text, result, type)
     var min = 0;
     $.each(result, function(entityNum, entity)
 	{
-		if(entity.score > max) {
-			max = entity.score;
+		if(entity.dom_score > max) {
+			max = entity.dom_score;
 		}
 		/*if(entity.score < min) {
 			min = entity.score;
@@ -75,7 +75,7 @@ function conceptsToBrat(text, result, type)
 	{
 		var entityData = [];
 		entityData.push("E" + entityNum);
-		entityData.push(entity.score);
+		entityData.push(entity.dom_score);
 		
 		var offsets = [];
 		var offset = [];
@@ -86,12 +86,12 @@ function conceptsToBrat(text, result, type)
 		entityData.push(offsets);
 		documentData.entities.push(entityData);
 		
-		if(!createdEntityTypes.includes(entity.score)) {
-			var factor = entity.score /max;
+		if(!createdEntityTypes.includes(entity.dom_score)) {
+			var factor = entity.dom_score /max;
 			
-			entityType = {type: entity.score, labels: [entity.score], bgColor: hslToHex(166, 68, 100 - 50 * factor), borderColor: "darken"};
+			entityType = {type: entity.dom_score, labels: [parseFloat(entity.dom_score).toFixed(2)], bgColor: hslToHex(353, 86, 100 - 50 * factor), borderColor: "darken"};
 			collectionData.entity_types.push(entityType);
-			createdEntityTypes.push(entity.score);
+			createdEntityTypes.push(entity.dom_score);
 		}
 	});
 	
