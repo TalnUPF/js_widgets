@@ -47,3 +47,7 @@ html, body{
     border-bottom-right-radius: .3rem;*/
     min-height: 100%;
 }
+
+.rtl{
+	direction: rtl;
+}
