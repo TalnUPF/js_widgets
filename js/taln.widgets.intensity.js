@@ -19,8 +19,7 @@ taln.widgets.intensity = {
 	
 	},
 	
-	loadIntensity2: function(result, output){
-		var data = result['data'];
+	loadIntensity2: function(data, output){
 		
 		var text = data.text;
 		var spans = data.spans;
