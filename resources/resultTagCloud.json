@@ -1,0 +1,46 @@
+{
+	"data": {
+		"cloud_tags": {
+			"all": [{
+					"tag": "some",
+					"weight": 6.0
+				},
+				{
+					"tag": "thing",
+					"weight": 1.0
+				},
+				{
+					"tag": "super",
+					"weight": 4.0
+				},
+				{
+					"tag": "interesting",
+					"weight": 12.0
+				},
+				{
+					"tag": "sure",
+					"weight": 34.0
+				},
+				{
+					"tag": "like",
+					"weight": 24.0
+				},
+				{
+					"tag": "pretty",
+					"weight": 8.0
+				},
+				{
+					"tag": "much",
+					"weight": 19.0
+				},
+				{
+					"tag": "any",
+					"weight": 15.0
+				},
+				{
+					"tag": "people",
+					"weight": 7.0
+				}]
+		}
+	}
+}
