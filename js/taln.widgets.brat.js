@@ -136,28 +136,30 @@ function babelnetToBrat(text, result)
     
     var documentData = { text: text, entities: [], relations: []};
     var collectionData = {entity_types: []};
-    $.each(result["all"], function(entityNum, entity)
-	{
-		var entityData = [];
-		entityData.push("E" + entityNum);
-		entityData.push(entity.id);
+    if (result != null) {
+		$.each(result["all"], function(entityNum, entity)
+		{
+			var entityData = [];
+			entityData.push("E" + entityNum);
+			entityData.push(entity.id);
 		
-		var offsets = [];
-		var offset = [];
-		offset.push(entity.begin);
-		offset.push(entity.end);
-		offsets.push(offset)
+			var offsets = [];
+			var offset = [];
+			offset.push(entity.begin);
+			offset.push(entity.end);
+			offsets.push(offset)
 		
-		entityData.push(offsets);
-		entityData.push("http://live.babelnet.org/synset?word=" + encodeURI(entity.id));
-		documentData.entities.push(entityData);
+			entityData.push(offsets);
+			entityData.push("http://live.babelnet.org/synset?word=" + encodeURI(entity.id));
+			documentData.entities.push(entityData);
 		
-		if(!createdEntityTypes.includes(entity.id)) {
-			entityType = {type: entity.id, labels: [entity.id], bgColor: getRandomColor(), borderColor: "darken"};
-			collectionData.entity_types.push(entityType);
-			createdEntityTypes.push(entity.id);
-		}
-	});
+			if(!createdEntityTypes.includes(entity.id)) {
+				entityType = {type: entity.id, labels: [entity.id], bgColor: getRandomColor(), borderColor: "darken"};
+				collectionData.entity_types.push(entityType);
+				createdEntityTypes.push(entity.id);
+			}
+		});
+	}
 	
 	output.data.documentData = documentData;
 	output.data.collectionData = collectionData;
