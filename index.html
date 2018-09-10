@@ -39,6 +39,7 @@
   <script type="text/javascript" src="https://rawgit.com/TalnUPF/js_widgets/master/js/taln.widgets.intensity.js"></script>
   <script type="text/javascript" src="https://rawgit.com/TalnUPF/js_widgets/master/js/taln.widgets.graph.js"></script>
   <script type="text/javascript" src="https://rawgit.com/TalnUPF/js_widgets/master/js/taln.widgets.chart.js"></script>
+  <script type="text/javascript" src="https://rawgit.com/TalnUPF/js_widgets/master/js/taln.widgets.tagcloud.js"></script>
   
   <!--TALN DEMO-->
   <link rel="stylesheet" href="https://rawgit.com/TalnUPF/js_widgets/master/css/tensorDemo.css">
@@ -124,13 +125,7 @@
 			<div class="tab-pane fade" id="tagCloud2" role="tabpanel" aria-labelledby="tagCloud2-tab">
 				<button class="btn btn-primary btn-lg mb-4" id="submitTagCloud2" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Processing">Analyze</button>
 			
-				<div id="tagCloudComponent2" class="accordion tagCloud2">
-					<a href="#" rel='4'><span>C++</span></a>
-					<a href="#" rel='2'><span>Java</span></a>
-					<a href="#" rel='5'><span>Python</span></a>
-					<a href="#" rel='5'><span>javascript</span></a>
-					<a href="#" rel='4'><span>react</span></a>
-				</div>
+				<div id="tagCloudComponent2" class="accordion tagCloud2"></div>
 			</div>
 		</div>
 	
@@ -399,6 +394,84 @@ function submitChart(type, url, input, loadingCallback, endLoadingCallback) {
 		});
 }
 
+function submitTagcloud(type, url, input, loadingCallback, endLoadingCallback) {
+	typeof loadingCallback === 'function' && loadingCallback();
+	var jqxhr = $.ajax({
+			type: type,
+			dataType: "json",
+			url: url,
+			data: {
+				text: input
+			} 
+		})
+		.done(function(result) {
+			$("#tagCloudComponent").empty();
+			var data = resultToTagCloud(result["data"]["cloud_tags"]);
+			taln.widgets.tagcloud.loadTagCloud(data, $("#tagCloudComponent"));
+		})
+		.fail(function(jqXHR, textStatus, errorThrown) {
+			var msg = '';
+			if (jqXHR.status === 0) {
+			    msg = 'Not connect.\n Verify Network.';
+			} else if (jqXHR.status == 404) {
+			    msg = 'Requested page not found. [404]';
+			} else if (jqXHR.status == 500) {
+			    msg = 'Internal Server Error [500].';
+			} else if (textStatus === 'parsererror') {
+			    msg = 'Requested JSON parse failed.';
+			} else if (textStatus === 'timeout') {
+			    msg = 'Time out error.';
+			} else if (textStatus === 'abort') {
+			    msg = 'Ajax request aborted.';
+			} else {
+			    msg = 'Uncaught Error.\n' + jqXHR.responseText;
+			}
+			alert(msg);
+		})
+		.always(function(data) {
+			typeof endLoadingCallback === 'function' && endLoadingCallback();
+		});
+}
+
+function submitTagcloud2(type, url, input, loadingCallback, endLoadingCallback) {
+	typeof loadingCallback === 'function' && loadingCallback();
+	var jqxhr = $.ajax({
+			type: type,
+			dataType: "json",
+			url: url,
+			data: {
+				text: input
+			} 
+		})
+		.done(function(result) {
+			$("#tagCloudComponent2").empty();
+			var data = resultToTagCloud(result["data"]["cloud_tags"]);
+			taln.widgets.tagcloud.loadTagCloud2(data, $("#tagCloudComponent2"));
+		})
+		.fail(function(jqXHR, textStatus, errorThrown) {
+			var msg = '';
+			if (jqXHR.status === 0) {
+			    msg = 'Not connect.\n Verify Network.';
+			} else if (jqXHR.status == 404) {
+			    msg = 'Requested page not found. [404]';
+			} else if (jqXHR.status == 500) {
+			    msg = 'Internal Server Error [500].';
+			} else if (textStatus === 'parsererror') {
+			    msg = 'Requested JSON parse failed.';
+			} else if (textStatus === 'timeout') {
+			    msg = 'Time out error.';
+			} else if (textStatus === 'abort') {
+			    msg = 'Ajax request aborted.';
+			} else {
+			    msg = 'Uncaught Error.\n' + jqXHR.responseText;
+			}
+			alert(msg);
+		})
+		.always(function(data) {
+			typeof endLoadingCallback === 'function' && endLoadingCallback();
+		});
+}
+
 head.ready(function() {
 	$("#submitHighlight").click(function() {
       var inputText = $("#intensityComponent").text();
@@ -418,78 +491,11 @@ head.ready(function() {
     });
     
     $("#submitTagCloud").click(function() {
-      //submitChart("POST", "./resources/resultChart.json", "", spinButton, unspinButton);
-      const myData = [
-		  {word: 'Prashant pipu', weight: 40},
-		  {word: 'Sandeep', weight: 39},
-		  {word: 'Ajinkya', weight: 11, color: 'green'},
-		  {word: 'Rishi', weight: 27},
-		  {word: 'Kuldeep', weight: 36},
-		  {word: 'Vivek', weight: 39},
-		  {word: 'Saheer', weight: 12, color: 'green'},
-		  {word: 'Lohit', weight: 27},
-		  {word: 'Anirudh', weight: 36},
-		  {word: 'Raj', weight: 22},
-		  {word: 'Mohan', weight: 40},
-		  {word: 'Yadav', weight: 39},
-		  {word: 'India', weight: 11, color: 'green'},
-		  {word: 'USA', weight: 27},
-		  {word: 'Sreekar', weight: 36},
-		  {word: 'Ram', weight: 39},
-		  {word: 'Deepali', weight: 12, color: 'green'},
-		  {word: 'Kunal', weight: 27},
-		  {word: 'Rishi', weight: 70},
-		  {word: 'Chintan', weight: 22}          
-		]
-
-		$("#tagCloudComponent").jQWCloud({
-			//data
-			words: myData,
-		
-		  // title
-		  title: 'JQ WOrd Cloud',
-		  // min/max font size
-		  minFont: 10,
-		  maxFont: 50,
-		  // font offset
-		  fontOffset: 8,
-		  // shows the algorithm of creating the word cloud
-		  showSpaceDIV: false,
-		  // Enables the vertical alignment of words
-		  verticalEnabled: true,
-		  // color
-		  cloud_color: null,
-		  // font family
-		  cloud_font_family: "Arial, Courier New",
-		  // color of covering divs
-		  spaceDIVColor: 'white',
-		  // left padding of words
-		  padding_left: null,
-		  // classes with space to be applied on each word
-		  word_common_classes: null,//"tagCloudWord",
-		  word_mouseEnter :function(){
-			$(this).css("text-decoration","underline");
-		  },
-		  word_mouseOut :function(){
-			$(this).css("text-decoration","none");	
-		  }
-		});
-
+      submitTagcloud("POST", "./resources/resultTagCloud.json", "", spinButton, unspinButton);
     });
     
     $("#submitTagCloud2").click(function() {
-    	//$('#tagCloudComponent2 a').tagcloud();
-		$('#tagCloudComponent2 a').tagcloud({
-			size: {
-			  start: 10,
-			  end: 38,
-			  unit: "px"
-			},
-			color: {
-			  start: '#a0a050',
-			  end: '#f04040'
-			}
-		});
+      submitTagcloud2("POST", "./resources/resultTagCloud.json", "", spinButton, unspinButton);
     });
 });
 </script>
