@@ -8,13 +8,13 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="external/radar.css">
+  <link rel="stylesheet" href="./external/css/radar.css">
   
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
-  <script type="text/javascript" src="./js/taln.widgets.js"></script>
-  <script type="text/javascript" src="./external/radarChart.js"></script>
+  <script type="text/javascript" src="./js/taln.widgets.chart.js"></script>
+  <script type="text/javascript" src="./external/js/radarChart.js"></script>
 
   <title>UPF TENSOR components</title>
 </head>
@@ -80,10 +80,81 @@ var radarChartOptions = {
   opacityArea: 0.25
 };
 
+function receiveUrlResult(url, data, output) {
+    $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: url
+        })
+        .done(function(result) {
+
+            var graphsData = profilinigToChart(result, data);
+            paintCharts(graphsData, output, radarChartOptions);
+
+        })
+        .fail(function(jqXHR, textStatus, errorThrown) {
+            var msg = '';
+            if (jqXHR.status === 0) {
+                msg = 'Not connect.\n Verify Network.';
+            } else if (jqXHR.status == 404) {
+                msg = 'Requested page not found. [404]';
+            } else if (jqXHR.status == 500) {
+                msg = 'Internal Server Error [500].';
+            } else if (textStatus === 'parsererror') {
+                msg = 'Requested JSON parse failed.';
+            } else if (textStatus === 'timeout') {
+                msg = 'Time out error.';
+            } else if (textStatus === 'abort') {
+                msg = 'Ajax request aborted.';
+            } else {
+                msg = 'Uncaught Error.\n' + jqXHR.responseText;
+            }
+            alert(msg);
+        })
+        .always(function(data) {});
+};
+
+function submitForm(type, url, loadingCallback, endLoadingCallback) {
+    typeof loadingCallback === 'function' && loadingCallback();
+    var jqxhr = $.ajax({
+            type: type,
+            dataType: "json",
+            url: url
+        })
+        .done(function(result) {
+     
+            $("#radar").empty();
+            receiveUrlResult("./resources/baseRadar3.json", result["data"]["profiling"], "radar");
+
+        })
+        .fail(function(jqXHR, textStatus, errorThrown) {
+            var msg = '';
+            if (jqXHR.status === 0) {
+                msg = 'Not connect.\n Verify Network.';
+            } else if (jqXHR.status == 404) {
+                msg = 'Requested page not found. [404]';
+            } else if (jqXHR.status == 500) {
+                msg = 'Internal Server Error [500].';
+            } else if (textStatus === 'parsererror') {
+                msg = 'Requested JSON parse failed.';
+            } else if (textStatus === 'timeout') {
+                msg = 'Time out error.';
+            } else if (textStatus === 'abort') {
+                msg = 'Ajax request aborted.';
+            } else {
+                msg = 'Uncaught Error.\n' + jqXHR.responseText;
+            }
+            alert(msg);
+        })
+        .always(function(data) {
+            typeof endLoadingCallback === 'function' && endLoadingCallback();
+        });
+}
+
 $("#inputForm").submit(function(event) {
   event.preventDefault();
   
   var inputText = $("#inputText").val();
-  taln.widgets.submitForm("POST", "./resources/baseRadar.json", inputText, taln.widgets.loadRadar, "radar", spinButton, unspinButton);
+  submitForm("POST", "./resources/resultChart.json", spinButton, unspinButton);
 });
 </script>
