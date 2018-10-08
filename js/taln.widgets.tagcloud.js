@@ -1,34 +1,13 @@
 function resultToTagCloud(result)
 {
-	/*const myData = [
-		  {word: 'Prashant pipu', weight: 40},
-		  {word: 'Sandeep', weight: 39},
-		  {word: 'Ajinkya', weight: 11, color: 'green'},
-		  {word: 'Rishi', weight: 27},
-		  {word: 'Kuldeep', weight: 36},
-		  {word: 'Vivek', weight: 39},
-		  {word: 'Saheer', weight: 12, color: 'green'},
-		  {word: 'Lohit', weight: 27},
-		  {word: 'Anirudh', weight: 36},
-		  {word: 'Raj', weight: 22},
-		  {word: 'Mohan', weight: 40},
-		  {word: 'Yadav', weight: 39},
-		  {word: 'India', weight: 11, color: 'green'},
-		  {word: 'USA', weight: 27},
-		  {word: 'Sreekar', weight: 36},
-		  {word: 'Ram', weight: 39},
-		  {word: 'Deepali', weight: 12, color: 'green'},
-		  {word: 'Kunal', weight: 27},
-		  {word: 'Rishi', weight: 70},
-		  {word: 'Chintan', weight: 22}          
-		]*/
-		
 	var wordsData = [];	
-	$.each(result["all"], function(entityNum, entity)
-	{
-		var word = {word: entity.tag, weight:entity.weight};
-		wordsData.push(word);
-	});
+	if (result != null) {
+		$.each(result["all"], function(entityNum, entity)
+		{
+			var word = {word: entity.tag, weight:entity.weight};
+			wordsData.push(word);
+		});
+	}
 	return wordsData;
 }
 
