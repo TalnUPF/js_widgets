@@ -283,6 +283,24 @@ function radicalizationToBrat(text, result)
 	return output;
 }
 
+function deepToBrat(text, result)
+{
+    var output = { data: {documentData: {}, collectionData: {}} };
+	output.data.documentData = JSON.parse(result["documentData"]);
+	output.data.collectionData = JSON.parse(result["collectionData"]);
+	
+	return output;
+}
+
+function surfaceToBrat(text, result)
+{
+    var output = { data: {documentData: {}, collectionData: {}} };
+	output.data.documentData = JSON.parse(result["documentData"]);
+	output.data.collectionData = JSON.parse(result["collectionData"]);
+	
+	return output;
+}
+
 var taln = taln || {};
 taln.widgets = taln.widgets || {};
 taln.widgets.brat = {
