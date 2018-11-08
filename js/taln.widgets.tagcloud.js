@@ -1,16 +1,3 @@
-function resultToTagCloud(result)
-{
-	var wordsData = [];	
-	if (result != null) {
-		$.each(result["all"], function(entityNum, entity)
-		{
-			var word = {word: entity.tag, weight:entity.weight};
-			wordsData.push(word);
-		});
-	}
-	return wordsData;
-}
-
 var taln = taln || {};
 taln.widgets = taln.widgets || {};
 taln.widgets.tagcloud = {
