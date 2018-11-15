@@ -40,7 +40,7 @@ taln.widgets.intensity = {
 
 			lastSpan = span.end;
 	    	return partialResult;
-    	})
+    	}).join('')
     	if (lastSpan < text.length) {
     		result += text.substring(lastSpan, text.length);
     	}
