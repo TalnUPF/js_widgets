@@ -1,3 +1,7 @@
+function contrast(r, g, b) {
+	return ((r*0.299 + g*0.587 + b*0.114) > 149) ? '#000000' : '#ffffff';
+}
+
 var taln = taln || {};
 taln.widgets = taln.widgets || {};
 taln.widgets.intensity = {
@@ -36,7 +40,15 @@ taln.widgets.intensity = {
 				partialResult += missingText;
 			
 			}
-			partialResult += '<span title="' + span.relevance + '" style="font-weight:normal; color:black; background-color:rgba(0, 0, 255, ' + (span.relevance * 0.7) + ')">' + spanText + '</span>';
+			var r = g = 0;
+			var	b = 255;
+			var threshold = 0.70;
+			if (span.relevance <= threshold){
+				r = g = (1 - span.relevance / threshold) * 200;
+			} else {
+				b = (1 - (span.relevance-threshold) / (1-threshold)) * 155 + 100;
+			}
+			partialResult += '<span title="' + span.relevance + '" style="font-size:' + (span.relevance * 0.2 + 0.9) + 'em; font-weight:normal; color:' + contrast(r, g, b) + '; background-color:rgb(' + r + ', ' + g + ', ' + b + ')">' + spanText + '</span>';
 
 			lastSpan = span.end;
 	    	return partialResult;
@@ -49,4 +61,5 @@ taln.widgets.intensity = {
 	}
 	
 };
+
 
